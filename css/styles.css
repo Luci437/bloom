@@ -167,9 +167,10 @@ body {
     position: relative;
     width: 20%;
     height: 100%;
-    background:#0e101f;
+    background: #170D45;
     border-radius: 8px;
     display: flex;
+    overflow: hidden;
 }
 .right-container {
     position: relative;
@@ -249,7 +250,7 @@ body {
     position: relative;
 }
 .group-label {
-    color: rgb(211, 212, 255);
+    color: rgb(255, 239, 91);
     font-weight: bold;
     transform: translateY(-24px);
 }
@@ -312,4 +313,39 @@ body {
 .cancel-button:hover {
     background: #a73a3a;
     color: #fff;
+}
+.user-info-box {
+    position: relative;
+    width: 100%;
+    height: 320px;
+    background: red;
+    background-image: url("../images/thumb2.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.image-black-cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(255, 0, 0, 0),#170D45);
+}
+.user-infos {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+.user-infos h4 {
+    color: rgba(187,187,187);
+}
+.user-infos h2 {
+    color: white;
+    text-transform: capitalize;
 }

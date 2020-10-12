@@ -54,7 +54,7 @@
             <?php
                 if(isset($_GET['success'])) {
                     if($_GET['success'] == 'accountCreated') {
-                        echo '<p class="success-message">Account created successfully.</p>';
+                        echo '<p class="success-message"><i class="fas fa-check-circle"></i> Account created successfully.</p>';
                     }
                 }else if(isset($_GET['error'])) {
                     if($_GET['error'] == 'invalidUser') {

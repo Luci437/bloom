@@ -24,7 +24,24 @@
 ?>
 <div class="main-container">
     <div class="left-container">
-        
+        <div class="user-info-box">
+            <div class="image-black-cover"></div>
+            <div class="user-infos">
+            <?php
+
+            require 'includes/dh.inc.php';
+
+            $userid = $_SESSION['userid'];
+            $sql = "SELECT * FROM users WHERE id='$userid';";
+            $result = mysqli_query($conn, $sql);
+
+            if($row = mysqli_fetch_assoc($result)) {
+                echo '<h2>'.$row['name'].'</h2>';
+                echo '<h4>'.$row['email'].'</h4>';
+            }
+            ?>
+            </div>
+        </div>
     </div>
     <div class="right-container">
         
