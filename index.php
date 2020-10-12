@@ -22,6 +22,15 @@
 <?php
     include_once("headpart.php");
 ?>
+
+<?php
+    if(isset($_GET['success'])) {
+        if($_GET['success'] == 'groupCreated') {
+            echo '<p class="logout-message"><i class="fas fa-check-circle"></i> Group Created Successfully.</p>';
+        }
+    }
+    ?>
+
 <div class="main-container">
     <div class="left-container">
         <div class="user-info-box">
@@ -42,6 +51,11 @@
             ?>
             </div>
         </div>
+
+        <div class="user-menus">
+            <a href="#" class="user-menu-buttons"><i class="fas fa-users uicons"></i> My groups</a>
+        </div>
+
     </div>
     <div class="right-container">
         
@@ -56,11 +70,11 @@
                 if(isset($_GET['link'])) {
                     if($_GET['link'] == 'showJoinBox') {
                         echo '
-                            <form action="includes/cancelGroup.inc.php" metho="post" class="join-group-form">
+                            <form action="includes/cancelGroup.inc.php" method="post" class="join-group-form">
                             <table cellspacing="10" style="width: 400px;">
                                 <tr>
                                     <td>
-                                        <label for="group-id" class="group-label">Group ID</label>
+                                        <label for="group-id" class="group-label">Group code</label>
                                     </td>
                                 </tr>
                                 <tr>
@@ -70,8 +84,8 @@
                                 </tr>
                                 <tr align="left">
                                     <td>
-                                        <a href="index.php" class="cancel-button"> Cancel</a>
                                         <button name="find-group-form" class="join-button"> Join group</button>
+                                        <a href="index.php" class="cancel-button"> Cancel</a>
                                     </td>
                                 </tr>
                             </table>
@@ -80,7 +94,7 @@
                     exit();
                     }elseif($_GET['link'] == 'showCreateBox') {
                         echo '
-                        <form action="includes/cancelGroup.inc.php" metho="post" class="join-group-form">
+                        <form action="includes/createGroup.inc.php" method="post" class="join-group-form">
                         <table cellspacing="10" style="width: 400px;">
                             <tr>
                                 <td>
@@ -89,13 +103,13 @@
                             </tr>
                             <tr>
                                 <td>
-                                <input type="text" name="group-id" required maxlength="20" class="group-input-create">
+                                <input type="text" name="group-name" required maxlength="20" class="group-input-create">
                                 </td>
                             </tr>
                             <tr align="left">
                                 <td>
+                                    <button name="create-group-form" class="join-button"> Create group</button>
                                     <a href="index.php" class="cancel-button"> Cancel</a>
-                                    <button name="find-group-form" class="join-button"> Create group</button>
                                 </td>
                             </tr>
                         </table>
@@ -105,7 +119,7 @@
                 }else {
                     echo '
                         <div class="group-button-box">
-                            <a href="index.php?link=showCreateBox" class="group-button"><i class="fas fa-sign-in-alt pdspace"></i> Create group</a>
+                            <a href="index.php?link=showCreateBox" class="group-button"><i class="fas fa-folder-plus pdspace"></i> Create group</a>
                             <a href="index.php?link=showJoinBox" class="group-button join-group"><i class="fas fa-plus-square pdspace"></i> Join group</a>
                         </div>
                     ';
