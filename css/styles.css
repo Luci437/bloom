@@ -131,14 +131,15 @@ body {
     backface-visibility: hidden;
     animation: lm 0.5s 5s forwards;
 }
-@keyframes flip {
+/* @keyframes flip {
     0% {transform: translateY(16px) rotateX(0deg);}
     100% {transform: translateY(16px) rotateX(-90deg);}
-}
+} */
 .logout-message{
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    font-weight: bold;
     background: rgba(112, 255, 119, 0.849);
     color: #1f5328;
     padding: 8px 104px;
@@ -155,6 +156,33 @@ body {
         visibility: hidden;
         transform: translateY(-2%);
     }
+}
+.warning-message {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgb(253, 255, 112);
+    color: #8d842f;
+    font-weight: bold;
+    padding: 8px 104px;
+    top: 2%;
+    border-radius: 8px;
+    animation: lm 0.5s 5s forwards;
+}
+.red-message {
+    position: absolute;
+    padding: 8px;
+    font-size: 16px;
+    color: #4d1717;
+    font-weight: bold;
+    background: #db5858;
+    width: 400px;
+    text-align: center;
+    border-radius: 8px;
+    top: 2%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: lm 0.5s 5s forwards;
 }
 .main-container {
     position: relative;
@@ -382,4 +410,10 @@ body {
 .user-menu-buttons:active {
     background: white;
     color: #333;
+}
+.group-detail-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: red;
 }
