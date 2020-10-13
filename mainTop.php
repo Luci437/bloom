@@ -28,12 +28,15 @@
         if($_GET['success'] == 'groupCreated') {
             echo '<p class="logout-message"><i class="fas fa-check-circle pdspace"></i> Group Created Successfully.</p>';
         }
+        if($_GET['success'] == 'reviewPosted') {
+            echo '<p class="logout-message"><i class="fas fa-check-circle pdspace"></i> Your review has been posted.</p>';
+        }
     }
     if(isset($_GET['error'])) {
         if($_GET['error'] == 'privateGroup') {
             echo '<p class="warning-message"><i class="fas fa-exclamation-triangle pdspace"></i> Group is closed, try again later.</p>';
         }elseif($_GET['error'] == 'group404') {
-            echo '<p class="red-message"><i class="fas fa-times-circle pdspace"></i> Can\'t find the Group.</p>';
+            echo '<p class="red-message"><i class="fas fa-times-circle pdspace"></i> Can\'t find that Group.</p>';
         }
     }
     ?>
@@ -61,6 +64,7 @@
 
         <div class="user-menus">
             <a href="#" class="user-menu-buttons"><i class="fas fa-users uicons"></i> My groups</a>
+            <a href="#" class="user-menu-buttons"><i class="fas fa-pencil-alt uicons"></i> My Reviews</a>
         </div>
 
     </div>

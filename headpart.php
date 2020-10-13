@@ -1,6 +1,6 @@
 
 <div class="top-menu-bar">
-        <img src="images/logo.svg" alt="logo" class="logo-img">
+        <a href="index.php"><img src="images/logo.svg" alt="logo" class="logo-img"></a>
         
         <div>
             <a href="includes/logout.inc.php" class="menus"><i class="fas fa-sign-in-alt pdspace"></i> Logout</a>

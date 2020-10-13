@@ -91,9 +91,16 @@
                     echo '
                         <h2 class="total-members">'.$total_members.'</h2>
                     ';
+
+                    $sql = "SELECT * FROM reviews WHERE group_id='$gid';";
+                    $result = mysqli_query($conn, $sql);
+                    $totalReviews = mysqli_num_rows($result);
+
+                    echo '
+                        <h2 class="total-members">'. $totalReviews .'</h2>      
+                    ';
                 }
             ?>
-            <h2 class="total-members">34567</h2>
         </div>
 
     </div>
