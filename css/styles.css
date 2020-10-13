@@ -205,7 +205,7 @@ body {
     position: relative;
     width: 78%;
     height: 100%;
-    background: #170D45;
+    /* background: #170D45; */
     border-radius: 8px;
     overflow: hidden;
 }
@@ -279,10 +279,14 @@ body {
     position: relative;
 }
 .group-label {
-    color: rgba(255, 255, 255, 0.911);
+    color: rgba(255, 255, 255, 0.295);
     font-weight: bold;
-    transform: translateY(0px);
+    font-size: 14px;
+    position: absolute;
+    top: 30px;
+    left: 32px;
     padding: 8px;
+    letter-spacing: 2px;
 }
 .group-input {
     width: 100%;
@@ -415,5 +419,157 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: red;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+}
+.group-member-box {
+    position: relative;
+    width: 69%;
+    height: 100%;
+    background: #16121C;
+    border-radius: 8px;
+    display: flex;
+    row-gap: 8px;
+    flex-direction: column;
+    padding: 8px;
+    box-sizing: border-box;
+    overflow-y: scroll;
+}
+.group-member-box::-webkit-scrollbar {
+    width: 5px;
+}
+.group-member-box::-webkit-scrollbar-thumb {
+    background: #1a1520;
+}
+.group-details-box {
+    position: relative;
+    width: 30%;
+    height: 100%;
+    border-radius: 8px;
+    background: #373C73;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.group-details-box img {
+    width: 100%;
+    position: relative;
+    
+}
+.group-detail-sub {
+    position: relative;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.group-name {
+    position: relative;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-transform: capitalize;
+}
+.group-code {
+    position: absolute;
+    top: 2%;
+    right: 5%;
+    font-weight: bold;
+    padding: 8px;
+    font-size: 16px;
+    color: rgb(143, 143, 143);
+}
+.group-hostname {
+    position: relative;
+    padding: 4px;
+    font-size: 16px;
+    color: rgb(143, 143, 143);
+}
+.group-hostname span {
+    color: rgb(175, 175, 175);
+}
+.total-members {
+    text-align: center;
+    position: relative;
+    color: rgb(230, 230, 230);
+    z-index: 2;
+}
+.member-sub-text {
+    text-align: center;
+    font-size: 12px;
+    color: rgb(173, 173, 173);
+}
+.review-box {
+    position: relative;
+    width: 100%;
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.034);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+}
+.review-top {
+    position: relative;
+    width: 100%;
+    padding: 8px;
+    background: transparent;
+}
+.review-bottom {
+    position: relative;
+    width: 100%;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid rgb(37, 37, 37);
+    height: 0;
+    opacity: 0;
+    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.review-box:hover .review-bottom {
+    padding: 8px;
+    height: inherit;
+    opacity: 1;
+}
+.review-input {
+    padding: 16px 16px 16px 64px;
+    width: 85%;
+    border: none;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.459);
+    color: #fff;
+    font-size: 16px;
+}
+.review-button {
+    padding: 16px 32px;
+    font-size: 16px;
+    font-weight: bolder;
+    border-radius: 8px;
+    border: none;
+    text-transform: uppercase;
+    margin-left: 8px;
+    display: flex;
+    color: rgb(236, 236, 236);
+    cursor: pointer;
+    background: linear-gradient(rgb(116, 116, 255),rgb(90, 90, 226));
+}
+.review-icon {
+    position: absolute;
+    padding: 14px;
+    color: rgb(44, 44, 44);
+    font-size: 23px;
+    border-radius: 8px 0 0 8px;
+    background: linear-gradient( rgb(20, 20, 20),rgb(15, 15, 15));
+}
+.group-username {
+    padding: 4px 16px;
+    display: inline-block;
+    border-radius: 30px;
+    color: rgb(44, 41, 85);
+    background: linear-gradient(rgb(116, 116, 255),rgb(90, 90, 226));
+}
+.group-user-about {
+    color: rgb(170, 170, 170);
+    padding: 4px 0;
 }
