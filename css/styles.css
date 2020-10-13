@@ -587,3 +587,72 @@ body {
     background-repeat: no-repeat;
     background-position: center;
 }
+.main-review-box {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #170D45;
+    box-sizing: border-box;
+    padding: 8px;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+}
+.main-review-box::-webkit-scrollbar {
+    width: 0;
+}
+.review-container {
+    position: relative;
+    padding: 16px;
+    background: #1c1050;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    opacity: 0.5;
+}
+.review-container:hover {
+    opacity: 1;
+}
+.review-user-box {
+    position: relative;
+    padding: 32px;
+    border-radius: 8px;
+    display: inline-block;
+    background: linear-gradient(rgb(85, 85, 235),rgb(61, 61, 185));
+}
+.review-text {
+    position: relative;
+    color: #fff;
+    padding-left: 16px;
+    text-transform: capitalize;
+}
+.review-container:hover .mark-as-read-box{
+    opacity: 1;
+}
+.mark-as-read-box {
+    position: absolute;
+    right: 8px;
+    width: 24%;
+    opacity: 0;
+    height: 100%;
+    background-image: url("../images/mark_as_read.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.mark-as-read {
+    font-weight: bolder;
+    position: relative;
+    left: 32px;
+    color: rgb(233, 233, 233);
+}
+.mark-as-read-box:hover .mark-as-read {
+    color: #fff;
+}
