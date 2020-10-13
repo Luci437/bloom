@@ -16,6 +16,14 @@
                                         exit();
                                 }else {
                                         $gid = $row['id'];
+                                        $uid = $_SESSION['userid'];
+                                        $sql = "SELECT * FROM joinedgroup WHERE group_id='$gid' AND user_id='$uid';";
+                                        $result = mysqli_query($conn, $sql);
+                                        if(!$row = mysqli_fetch_assoc($result)) {
+                                                $uid = $_SESSION['userid'];
+                                                $sql = "INSERT INTO joinedgroup(group_id,user_id) VALUES('$gid','$uid');";
+                                                mysqli_query($conn, $sql);
+                                        }
                                         header("Location: ../showGroup.php?groupId=$gid");
                                         exit();
                                 }
