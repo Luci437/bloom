@@ -591,8 +591,10 @@ body {
     position: relative;
     width: 100%;
     height: 100%;
-    background: #170D45;
+    /* background: #170D45; */
+    background: #130028;
     box-sizing: border-box;
+    overflow-x: hidden;
     padding: 8px;
     overflow-y: scroll;
     display: flex;
@@ -627,6 +629,8 @@ body {
     color: #fff;
     padding-left: 16px;
     text-transform: capitalize;
+    width: 75%;
+    justify-content: center;
 }
 .review-container:hover .mark-as-read-box{
     opacity: 1;
@@ -655,4 +659,33 @@ body {
 }
 .mark-as-read-box:hover .mark-as-read {
     color: #fff;
+}
+.video-box {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: red;
+    overflow: hidden;
+}
+.video-text-box {
+    position: absolute;
+    top: 20%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    z-index: 3;
+
+}
+.video-text {
+    font-size: 56px;
+    color: rgba(255, 255, 255, 0.315);
+}
+.no-review-video {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: none;
 }

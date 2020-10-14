@@ -7,7 +7,7 @@
         
         if(isset($_POST['review-submit'])) {
             
-            $review = $_POST['review'];
+            $review = mysqli_real_escape_string($conn,$_POST['review']);
             $user_id = $_POST['userid'];
             $group_id = $_POST['groupid'];
 

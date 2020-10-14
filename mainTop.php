@@ -64,7 +64,7 @@
 
         <div class="user-menus">
             <a href="#" class="user-menu-buttons"><i class="fas fa-users uicons"></i> My groups</a>
-            <a href="showMyReviews.php" class="user-menu-buttons"><i class="fas fa-pencil-alt uicons"></i> My Reviews</a>
+            <a href="showMyReviews.php" class="user-menu-buttons active-menus-reviews"><i class="fas fa-pencil-alt uicons"></i> My Reviews</a>
         </div>
 
     </div>

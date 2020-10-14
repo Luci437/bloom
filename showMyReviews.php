@@ -1,7 +1,12 @@
 <?php
     include "mainTop.php";
 ?>
-
+<style>
+.active-menus-reviews {
+    background: white;
+    color: #333;
+}
+</style>
 <div class="main-review-box">
     <!-- ** -->
         <?php
@@ -12,6 +17,7 @@
                 $uid = $_SESSION['userid'];
                 $sql = "SELECT * FROM reviews WHERE user_id='$uid' ORDER BY id desc;";
                 $result = mysqli_query($conn, $sql);
+                $total_reviews = mysqli_num_rows($result);
                 while($row = mysqli_fetch_assoc($result)) {
                     echo '
                         <div class="review-container">
@@ -21,6 +27,17 @@
                                 <a href="includes/deleteReview.inc.php?reviewId='.$row['id'].'" class="mark-as-read">MARK AS READ</a>
                             </div>
                         </div>
+                    ';
+                }
+                if($total_reviews == 0) {
+                    echo '
+                    <div class="video-box">
+                        <div class="video-text-box">
+                            <h1 class="video-text"><i class="fab fa-cloudversify pdspace"></i>Deserted</h1>
+                            <h2 style="color: rgba(255, 255, 255, 0.18);">Join any group or create a new group, reviews are inevitable.</h2>
+                        </div>
+                        <video autoplay loop playsinline src="images/galaxy stone.mp4" class="no-review-video"></video>
+                    </div>
                     ';
                 }
 
