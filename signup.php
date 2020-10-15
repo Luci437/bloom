@@ -14,6 +14,7 @@
     <link rel="shortcut icon" href="fav.ico" type="image/x-icon" />
     <title>Sign Up | bloom</title>
     <link rel="stylesheet" href="css/styles.css">
+    <script src="ajax/jquery-3.5.1.min.js"></script>
     <style>
         body {
             background: url('images/page2_top.jpg');
@@ -52,9 +53,37 @@
                 </div>
                 
                 <label style="color: rgba(255,255,255,0.1);font-size: 12px;padding: 0 0 10px 0;">&#10003; Your are accepting to our Policies and Conditions</label>
-                <button class="log-button" name="singup-form">Create Account</button>
+                <button class="log-button" name="singup-form" id="reg-submit-button">Create Account</button>
                 <label style="color: rgba(255,255,255,0.1);font-size: 12px;padding: 10px 0 0 0;">&copy; 2020 bloom</label>
             </form>
+            <!-- ajax to check username -->
+            <script>
+                $(document).ready(function() {
+                    $('.error-message').hide();
+                    $('#email').on('keyup',function(){
+                        var email = $('#email').val();
+                        $.ajax({
+                            url: 'ajax/checkUsername.ajax.php',
+                            type: 'POST',
+                            data: {
+                                email: email
+                            },
+                            cache: false,
+                            success: function(dataResult) {
+                                var dataResult = JSON.parse(dataResult);
+                                if(dataResult.result == 1) {
+                                    $('.error-message').show();
+                                    $('#reg-submit-button').attr('disabled','disabled').css({'opacity': '0.4','cursor': 'progress'});
+                                }else {
+                                    $('.error-message').hide();
+                                    $('#reg-submit-button').removeAttr('disabled').css({'opacity': '1','cursor': 'pointer'});
+                                }
+                            }
+                        });
+                    });
+                });
+            </script>
+
             <?php
                 if(isset($_GET['error'])) {
                     if($_GET['error'] == 'usernameTaken') {
@@ -62,6 +91,8 @@
                     }
                 }
             ?>
+            <p class="error-message">Sorry Email already registred</p>
     </div>
 </body>
+<script src="ajax/jquery-3.5.1.min.js"></script>
 </html>

@@ -129,7 +129,8 @@ body {
     transform: translateY(16px);
     transform-origin: center;
     backface-visibility: hidden;
-    animation: lm 0.5s 5s forwards;
+    transition: 0.3s ease; 
+    
 }
 /* @keyframes flip {
     0% {transform: translateY(16px) rotateX(0deg);}
@@ -406,6 +407,7 @@ body {
     font-weight: bold;
     transition: 0.1s ease;
     font-size: 16px;
+    display: flex;
 }
 .user-menu-buttons:hover {
     background: white;
@@ -626,6 +628,12 @@ body {
     border-radius: 8px;
     display: inline-block;
     background: linear-gradient(rgb(85, 85, 235),rgb(61, 61, 185));
+    background-image: url("../images/stay-pic.png");
+    background-size: cover;
+    background-position: center;
+}
+.review-container:hover .review-user-box {
+    background-image: url("../images/laced_up_dribbble_9.gif");
 }
 .review-text {
     position: relative;
@@ -695,7 +703,7 @@ body {
     position: relative;
     width: 100%;
     height: 100%;
-    background:#7218C7;
+    background: #170D45;
     display: flex;
     padding: 8px;
     flex-direction: column;
@@ -711,6 +719,10 @@ body {
     font-weight: bolder;
     font-family: 'Montserrat';
     color: rgba(255, 255, 255, 0.925);
+    width: 100%;
+    text-align: center;
+    padding-top: 16px;
+    z-index: 4;
 }
 .my-each-group {
     position: relative;
@@ -728,6 +740,7 @@ body {
     height: 300px;
     border-radius: 8px;
     background: #021121;
+    z-index: 2;
     overflow: hidden;
 }
 .each-group-box:before {
@@ -838,5 +851,65 @@ body {
 }
 .open-button:hover {
     background: linear-gradient(rgb(121, 226, 60),rgb(145, 207, 45));
+    color: #fff;
+}
+.total-review-box {
+    width: 32px;
+    height: 32px;
+    background: #fff;
+    position: absolute;
+    right: 10%;
+    bottom: 15%;
+    overflow: hidden;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-origin: bottom center;
+    animation: shake 1s linear;
+}
+@keyframes shake {
+    40% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(0deg);
+    }
+    55% {
+        transform: translateY(-10px) rotate(-10deg);
+    }
+    60% {
+        transform: translateY(-10px) rotate(10deg);
+    }
+    65% {
+        transform: translateY(-10px) rotate(-10deg);
+    }
+    70% {
+        transform: translateY(-10px) rotate(10deg);
+    }
+    85% {
+        transform: translateY(-10px) rotate(-10deg);
+    }
+    90% {
+        transform: translateY(-10px) rotate(10deg);
+    }
+    95% {
+        transform: translateY(-10px) rotate(-10deg);
+    }
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+}
+.total-review-box p {
+    color: #333;
+    z-index: 5;
+    font-size: 14px;
+    font-family: 'Montserrat';
+    font-weight: bold;
+}
+.user-menu-buttons:hover .total-review-box {
+    background: rgb(35, 35, 87);
+}
+.user-menu-buttons:hover .total-review-box p {
     color: #fff;
 }

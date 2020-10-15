@@ -31,6 +31,7 @@
             }else {
                 echo '
                 <h2 class="main-title-groups">Joined Group</h2>
+                <h4 class="main-title-groups" style="font-weight: lighter;padding: 10px 0 16px 0;">You can see all your groups here, making ease access to it.</h4>
                 <div class="my-each-group">
                 ';
             while($row = mysqli_fetch_assoc($result)) {

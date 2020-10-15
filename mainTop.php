@@ -34,6 +34,9 @@
         if($_GET['success'] == 'reviewPosted') {
             echo '<p class="logout-message"><i class="fas fa-check-circle pdspace"></i> Your review has been posted.</p>';
         }
+        if($_GET['success'] == 'PermissionChanged') {
+            echo '<p class="logout-message"><i class="fas fa-check-circle pdspace"></i> Group Permission changed.</p>';
+        }
     }
     if(isset($_GET['error'])) {
         if($_GET['error'] == 'privateGroup') {
@@ -67,8 +70,37 @@
 
         <div class="user-menus">
             <a href="myGroup.php" class="user-menu-buttons active-menus-groups"><i class="fas fa-users uicons"></i> My groups</a>
-            <a href="showMyReviews.php" class="user-menu-buttons active-menus-reviews"><i class="fas fa-pencil-alt uicons"></i> My Reviews</a>
+            <a href="showMyReviews.php" class="user-menu-buttons active-menus-reviews"><i class="fas fa-pencil-alt uicons"></i> My Reviews 
+            <div class="total-review-box">
+                <p id="review-text">0</p>
+            </div>
+             </a>
         </div>
+
+        <script src="ajax/jquery-3.5.1.min.js"></script>
+        <script>
+            $('.total-review-box').hide();
+            setInterval(() => {
+                $.ajax({
+            url: 'ajax/countReviews.ajax.php',
+            type: 'POST',
+            data: {
+                val : '1'
+            },
+            cache: false,
+            success: function(dataResult) {
+                $('.total-review-box').hide();
+                var dataResult = JSON.parse(dataResult);
+                if(dataResult.reviews > 0) {
+                    $('.total-review-box').show();
+                    $("#review-text").html(dataResult.reviews);
+                }else {
+                    $('.total-review-box').hide();
+                }
+            }
+        });
+            }, 1000);
+        </script>
 
     </div>
     <div class="right-container">
