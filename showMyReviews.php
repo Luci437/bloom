@@ -3,8 +3,8 @@
 ?>
 <style>
 .active-menus-reviews {
-    background: white;
-    color: #333;
+    background: #241663;
+    color: white;
 }
 </style>
 <div class="main-review-box">
@@ -15,7 +15,7 @@
             if($_SESSION['userid']) {
 
                 $uid = $_SESSION['userid'];
-                $sql = "SELECT * FROM reviews WHERE user_id='$uid' ORDER BY id desc;";
+                $sql = "SELECT * FROM reviews WHERE user_id='$uid' AND viewed=false ORDER BY id desc;";
                 $result = mysqli_query($conn, $sql);
                 $total_reviews = mysqli_num_rows($result);
                 while($row = mysqli_fetch_assoc($result)) {
@@ -33,7 +33,7 @@
                     echo '
                     <div class="video-box">
                         <div class="video-text-box">
-                            <h1 class="video-text"><i class="fab fa-cloudversify pdspace"></i>Deserted</h1>
+                            <h1 class="video-text"><i class="fab fa-rocketchat pdspace"></i>Deserted</h1>
                             <h2 style="color: rgba(255, 255, 255, 0.18);">Join any group or create a new group, reviews are inevitable.</h2>
                         </div>
                         <video autoplay loop playsinline src="images/galaxy stone.mp4" class="no-review-video"></video>

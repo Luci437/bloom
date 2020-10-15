@@ -19,7 +19,7 @@
             $hashPwd = password_hash($pawd, PASSWORD_DEFAULT);
             $sql = "INSERT INTO users(name,email,password) VALUES('$name', '$email', '$hashPwd');";
             mysqli_query($conn, $sql);
-            header("Location: ../login.php?success=accountCreated");
+            header("Location: ../login.php?success=accountCreated&email=$email");
             exit();
         }
     }else {

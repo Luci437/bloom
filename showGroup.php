@@ -10,7 +10,7 @@
         if(isset($_GET['groupId'])) {
             $gid = $_GET['groupId'];
             $uid= $_SESSION['userid'];
-            $sql = "SELECT u.name,u.id,u.email, g.group_id FROM users u,joinedgroup g WHERE g.group_id='$gid' AND g.user_id=u.id;";
+            $sql = "SELECT u.name,u.id,u.email, g.group_id FROM users u,joinedgroup g WHERE g.group_id='$gid' AND g.user_id=u.id ORDER BY u.name;";
             $result = mysqli_query($conn, $sql);
             $total_members = mysqli_num_rows($result);
             while($row = mysqli_fetch_assoc($result)) {
@@ -32,7 +32,7 @@
                     ';
                 }
             }
-            if($total_members == 1) {
+            if($total_members <= 1) {
                 echo '<div class="empty-group"></div>';
             }
         }
@@ -61,7 +61,8 @@
                     $uid = $row['user_id'];
                     $sql = "SELECT name FROM users where id='$uid';";
                     echo '
-                        <h4 class="group-code">#'.$row['group_gen_id'].'</h4>
+                        <input type="text" readonly value="'.$row['group_gen_id'].'" class="group-code">
+                        
                         <div class="group-detail-sub">
                         <h3 class="group-name">'.$row['group_name'].'</h3>
                     ';
@@ -74,7 +75,7 @@
                 }
             }
         ?>
-        <div style="display: grid;grid-template-columns: repeat(2,1fr);margin-top: 16px;">
+        <div style="display: grid;grid-template-columns: repeat(2,1fr);margin-top: 16px;row-gap: 8px;column-gap: 8px;">
             <h4 class="member-sub-text">TOTAL_MEMBERS</h4>
             <h4 class="member-sub-text">TOTAL_REVIEWS</h4>
             <?php   
@@ -101,8 +102,24 @@
                     ';
                 }
             ?>
-        </div>
+            <?php
+                require 'includes/dh.inc.php';
+                $uid = $_SESSION['userid'];
+                $groupid = $_GET['groupId'];
+                $sql = "SELECT * FROM groups WHERE user_id='$uid' AND id='$groupid';";
+                $result = mysqli_query($conn, $sql);
+                if($row = mysqli_fetch_assoc($result)) {
+                    if($row['group_type'] == 'Public') {
+                        echo '<a href="includes/groupAccess.inc.php?groupId='.$groupid.'" class="group-close-button"><i class="fas fa-lock pdspace"></i> CLOSE GROUP</a>';
+                    }else {
+                        echo '<a href="includes/groupAccess.inc.php?groupId='.$groupid.'" class="group-close-button open-button"><i class="fas fa-lock-open pdspace"></i> OPEN GROUP</a>';
+                    }
+                }
+            ?>
+            
 
+        </div>
+                
     </div>
 
         <script type="text/javascript">
@@ -111,23 +128,30 @@
             let darkValues = ['#7B241C','#5B2C6F','#1A5276','#21618C','#117864','#0E6655','#1D8348','#9A7D0A','#9C640C','#935116','#873600','#515A5A','#212F3C','#1C2833'];
             let lightValues = ['#A93226','#7D3C98','#2471A3','#2E86C1','#17A589','#138D75','#28B463','#D4AC0D','#D68910','#CA6F1E','#BA4A00','#707B7C','#2E4053','#273746'];
             let totalColor = darkValues.length;
-            let choosedColor = [];
             let el = document.getElementsByClassName('group-username');
             let randNumber;
 
             for(let i=0; i<el.length; i++) {
-                while(true) {
-                     randNumber = Math.floor(Math.random()*totalColor);
-                    if(choosedColor.includes(randNumber)) {
-                        continue;
-                    }else {
-                        choosedColor.push(randNumber);
-                        el[i].style.background = "linear-gradient("+ lightValues[randNumber] +","+ darkValues[randNumber] +")";
-                        break;
-                    }
-                }
+                randNumber = Math.floor(Math.random()*totalColor);
+                el[i].style.background = "linear-gradient("+ lightValues[randNumber] +","+ darkValues[randNumber] +")";
             }
         }
+
+
+
+            var copyTextareaBtn = document.querySelector('.group-code');
+
+            copyTextareaBtn.addEventListener('click', function(event) {
+            var copyTextarea = document.querySelector('.group-code');
+            copyTextarea.focus();
+            copyTextarea.select();
+            document.execCommand('copy');
+            console.log("copied");
+            document.getElementsByClassName('copy-message')[0].style.display = "block";
+            setTimeout(() => {
+                document.getElementsByClassName('copy-message')[0].style.display = "none";
+            }, 5000);
+            });
         </script>
 
 </div>

@@ -47,7 +47,7 @@
                             </tr>
                             <tr>
                                 <td>
-                                <input type="text" onkeypress="return alpha(event)" name="group-name" required maxlength="20" class="group-input-create">
+                                <input type="text" name="group-name" required maxlength="20" class="group-input-create">
                                 </td>
                             </tr>
                             <tr align="left">
@@ -72,14 +72,6 @@
                 }
 
             ?>
-
-            <script type="text/javascript">
-                function alpha(e) {
-                    var k;
-                    document.all ? k = e.keyCode : k = e.which;
-                    return ((k > 64 && k < 91) || (k > 96 && k < 123) || k == 8 || k == 32 || (k >= 48 && k <= 57));
-                }
-            </script>
 
         </div>
 

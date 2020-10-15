@@ -7,7 +7,7 @@
 
         if(isset($_POST['create-group-form'])) {
 
-            $group_name = $_POST['group-name'];
+            $group_name = mysqli_real_escape_string($conn,$_POST['group-name']);
             $group_type = 'Public';
             $user_id = $_SESSION['userid'];
             $group_gen_code = '';
@@ -31,6 +31,12 @@
 
 
             $sql = "INSERT INTO groups(user_id, group_name, group_type,group_gen_id) VALUES('$user_id','$group_name','$group_type','$group_gen_code');";
+            mysqli_query($conn, $sql);
+            $sql = 'SELECT id FROM groups ORDER BY ID DESC LIMIT 1';
+            $result = mysqli_query($conn, $sql);
+            $row = mysqli_fetch_assoc($result);
+            $gid= $row['id'];
+            $sql = "INSERT INTO joinedgroup(group_id,user_id) VALUES('$gid','$user_id');";
             mysqli_query($conn, $sql);
 
             header("Location: ../index.php?success=groupCreated");

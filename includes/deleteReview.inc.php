@@ -5,7 +5,7 @@
     if(isset($_GET['reviewId'])) {
         $reviewId = $_GET['reviewId'];
 
-        $sql = "DELETE FROM reviews WHERE id='$reviewId'";
+        $sql = "UPDATE reviews SET viewed=true WHERE id='$reviewId';";
         mysqli_query($conn, $sql);
 
         header("Location: ../showMyReviews.php");

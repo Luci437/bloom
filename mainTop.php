@@ -19,6 +19,9 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+
+    <h4 class="copy-message"><i class="fas fa-clipboard pdspace"></i> Code copied</h4>
+
 <?php
     include_once("headpart.php");
 ?>
@@ -63,7 +66,7 @@
         </div>
 
         <div class="user-menus">
-            <a href="#" class="user-menu-buttons"><i class="fas fa-users uicons"></i> My groups</a>
+            <a href="myGroup.php" class="user-menu-buttons active-menus-groups"><i class="fas fa-users uicons"></i> My groups</a>
             <a href="showMyReviews.php" class="user-menu-buttons active-menus-reviews"><i class="fas fa-pencil-alt uicons"></i> My Reviews</a>
         </div>
 

@@ -41,7 +41,14 @@
                 <h5 class="sub-heading">Welcome back to bloo, the place we know who am i.</h5>
                 <div class="sub-login-box">
                     <label for="email" class="input-label">Email</label>
-                    <input type="email" class="input-box" required id="email" name="email">
+                    <?php
+                        if(isset($_GET['email'])) {
+                            $eid = $_GET['email'];
+                            echo '<input type="email" class="input-box" required id="email" value="'.$eid.'" name="email">';        
+                        }else {
+                            echo '<input type="email" class="input-box" required id="email" name="email">';
+                        }
+                    ?>
                 </div>
                 <div class="sub-login-box">
                     <label for="password" class="input-label">Password</label>

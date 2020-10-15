@@ -12,7 +12,7 @@
             $group_id = $_POST['groupid'];
 
 
-            $sql = "INSERT INTO reviews(group_id, user_id, review) VALUES('$group_id','$user_id','$review');";
+            $sql = "INSERT INTO reviews(group_id, user_id, review, viewed) VALUES('$group_id','$user_id','$review',false);";
             mysqli_query($conn, $sql);
 
             header("Location: ../showGroup.php?groupId=$group_id&success=reviewPosted");
