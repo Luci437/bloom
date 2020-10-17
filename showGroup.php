@@ -17,15 +17,16 @@
                 if($row['id'] != $uid) {
                     echo '
                     <div class="review-box">
+                        <a href="includes/kick.inc.php?userId='.$row['id'].'&groupId='.$row['group_id'].'"><i class="fas fa-times close-button"></i></a>
                     <div class="review-top">
                         <h4 class="group-username">@ '.$row['name'].'</h4>
                         <h5 class="group-user-about">'.$row['email'].'</h5>
                     </div>
-                    <form action="includes/sendReview.inc.php" method="POST" class="review-bottom">
+                    <form method="POST" action="includes/sendReview.inc.php" class="review-bottom">
                     <i class="fas fa-comment-alt review-icon"></i>
-                        <input type="text" placeholder="Say something about me" class="review-input" require name="review">
-                        <input type="hidden" name="userid" value="'.$row['id'].'">
-                        <input type="hidden" name="groupid" value="'.$row['group_id'].'">
+                        <input type="text" placeholder="Say something about me" class="review-input" id="review" require name="review">
+                        <input type="hidden" id="userid" name="userid" value="'.$row['id'].'">
+                        <input type="hidden" id="groupid" name="groupid" value="'.$row['group_id'].'">
                         <button type="submit" name="review-submit" class="review-button"><i class="fas fa-paper-plane pdspace"></i> send</button>
                     </form>
                     </div>
@@ -33,13 +34,14 @@
                 }
             }
             if($total_members <= 1) {
-                echo '<div class="empty-group"></div>';
+                echo '<div class="empty-group">
+                    <a href="includes/deleteGroup.inc.php?groupId='.$gid.'" class="group-close-button"><i class="fas fa-eraser pdspace"></i> DELETE GROUP</a>
+                </div>';
             }
         }
 
     ?>
     <!-- *** -->
-
     </div>
     <div class="group-details-box">
         <div>
@@ -61,7 +63,9 @@
                     $uid = $row['user_id'];
                     $sql = "SELECT name FROM users where id='$uid';";
                     echo '
+                        <div class="group-code-box">#
                         <input type="text" readonly value="'.$row['group_gen_id'].'" class="group-code">
+                        </div>
                         
                         <div class="group-detail-sub">
                         <h3 class="group-name">'.$row['group_name'].'</h3>
@@ -114,6 +118,8 @@
                     }else {
                         echo '<a href="includes/groupAccess.inc.php?groupId='.$groupid.'" class="group-close-button open-button"><i class="fas fa-lock-open pdspace"></i> OPEN GROUP</a>';
                     }
+                }else {
+                    echo '<a href="includes/leaveGroup.inc.php?groupId='.$groupid.'" class="group-close-button"><i class="fas fa-sign-out-alt pdspace"></i> LEAVE GROUP</a>';
                 }
             ?>
             

@@ -18,7 +18,15 @@
                 $sql = "SELECT * FROM reviews WHERE user_id='$uid' AND viewed=false ORDER BY id desc;";
                 $result = mysqli_query($conn, $sql);
                 $total_reviews = mysqli_num_rows($result);
+                $i = 1;
                 while($row = mysqli_fetch_assoc($result)) {
+                    if($i == 1) {
+                        echo '
+                        <h2 class="main-title-groups">Yours Review</h2>
+                        <h4 class="main-title-groups" style="font-weight: lighter;padding: 0px 0 24px 0;">You can see all your reviews here.</h4>
+                        ';
+                        $i++;
+                    }
                     echo '
                         <div class="review-container">
                             <div class="review-user-box"></div>

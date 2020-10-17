@@ -37,12 +37,25 @@
         if($_GET['success'] == 'PermissionChanged') {
             echo '<p class="logout-message"><i class="fas fa-check-circle pdspace"></i> Group Permission changed.</p>';
         }
+        if($_GET['success'] == 'exitedGroup') {
+            echo '<p class="logout-message"><i class="fas fa-check-circle pdspace"></i> Leaved group successfully.</p>';
+        }
+        if($_GET['success'] == 'groupSmashed') {
+            echo '<p class="logout-message"><i class="fas fa-check-circle pdspace"></i> Group erased successfully.</p>';
+        }
+        if($_GET['success'] == 'kicked') {
+            echo '<p class="logout-message"><i class="fas fa-check-circle pdspace"></i> Member has been kicked.</p>';
+        }
     }
     if(isset($_GET['error'])) {
         if($_GET['error'] == 'privateGroup') {
             echo '<p class="warning-message"><i class="fas fa-exclamation-triangle pdspace"></i> Group is closed, try again later.</p>';
-        }elseif($_GET['error'] == 'group404') {
+        }
+        if($_GET['error'] == 'group404') {
             echo '<p class="red-message"><i class="fas fa-times-circle pdspace"></i> Can\'t find that Group.</p>';
+        }
+        if($_GET['error'] == 'notAdmin') {
+            echo '<p class="warning-message"><i class="fas fa-exclamation-triangle pdspace"></i> Only group admin can kick anyone.</p>';
         }
     }
     ?>

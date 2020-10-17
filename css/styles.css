@@ -474,12 +474,17 @@ body {
     color: white;
     text-transform: capitalize;
 }
-.group-code {
+.group-code-box {
     position: absolute;
     top: 2%;
-    right: 5%;
-    font-weight: bold;
+    right: 0;
+    display: flex;
+    font-size: 16px;
+    color: rgb(143, 143, 143);
     padding: 8px;
+}
+.group-code {
+    font-weight: bold;
     font-size: 16px;
     color: rgb(143, 143, 143);
     background: transparent;
@@ -912,4 +917,24 @@ body {
 }
 .user-menu-buttons:hover .total-review-box p {
     color: #fff;
+}
+.close-button {
+    position: absolute;
+    right: 8px;
+    background: rgba(0, 0, 0, 0);
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    color: #211b2700;
+    z-index: 3;
+}
+.close-button:hover {
+    background: rgb(22, 22, 22);
+    color: #fff;
+}
+.review-box:hover .close-button{
+    color: #2d2635;
 }
