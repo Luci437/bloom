@@ -30,7 +30,7 @@
         <img src="images/logo.svg" alt="logo" class="logo-img">
         
         <div>
-            <a href="#" class="menus active">Login</a>
+            <a href="login.php" class="menus active">Login</a>
             <a href="signup.php" class="menus">Signup</a>
         </div>
     </div>
@@ -53,6 +53,9 @@
                 <div class="sub-login-box">
                     <label for="password" class="input-label">Password</label>
                     <input type="password" class="input-box" required id="password" name="password">
+                </div>
+                <div class="sub-login-box">
+                    <a class="forgot-password-link" href="forgotpassword.php">i forgot my password!</a>
                 </div>
                 <label style="color: rgba(255,255,255,0.1);font-size: 12px;padding: 0 0 10px 0;">Your are accepting to our Policies and Conditions</label>
                 <button type="submit" name="login-form" class="log-button">Sign In</button>

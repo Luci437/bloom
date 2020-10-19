@@ -938,3 +938,54 @@ body {
 .review-box:hover .close-button{
     color: #2d2635;
 }
+.forgot-password-link {
+    position: relative;
+    left: -50%;
+    color: rgba(255,255,255,0.5);
+    font-weight: bold;
+}
+.forgot-password-link:hover {
+    color: rgb(61, 113, 255);
+}
+.about-main-container {
+    position: relative;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+}
+body::-webkit-scrollbar {
+    width: 0px;
+    background: #12123E;
+}
+.about-box1 {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #D6DEE6;
+    background-image: url("../images/man.gif");
+    background-size: cover;
+    background-position: center;
+}
+.about-bg-video {
+    position: absolute;
+    top: -50%;
+    height: 1000px;
+}
+.about-text-box1 {
+    z-index: 3;
+    position: absolute;
+    top: 10%;
+    right: 5%;
+}
+.text1 {
+    font-size: 64px;
+    color: #12123ea2;
+}
+.text1-sub1 {
+    color: #12123e63;
+    font-weight: lighter;
+}
