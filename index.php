@@ -2,7 +2,6 @@
 <?php 
     include('mainTop.php');
 ?>
-
 <div class="no-group-container">
             <!-- <img src="images/no-group.png" alt="no-group" class="no-group-img"> -->
             <div class="black-cover"></div>
@@ -22,7 +21,8 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                    <input type="text" name="group-code" required maxlength="5" class="group-input">
+                                    <input type="text" name="group-code" onkeyup="checkCode()" onpaste="checkCode()" required maxlength="5" id="group-gen-code" class="group-input">
+                                    <i class="fas fa-check-circle correct-group"></i>
                                     </td>
                                 </tr>
                                 <tr align="left">
@@ -33,6 +33,8 @@
                                 </tr>
                             </table>
                         </form>
+                        <script type="text/javascript" src="javascript/jscript.js">
+                        </script>
                     ';
                     exit();
                     }elseif($_GET['link'] == 'showCreateBox') {
@@ -72,7 +74,6 @@
                 }
 
             ?>
-
         </div>
 
 <?php

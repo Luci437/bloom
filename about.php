@@ -20,13 +20,49 @@
     ?>
 
 <div class="about-main-container">
-        <div class="about-box1">
-            <!-- <video class="about-bg-video" playsinline autoplay loop>
+
+        <div class="about-box5">
+            <div class="about-text-box3">
+                <h1 class="text2">So what is bloom?</h1>
+                <h3 class="text2-sub2">bloom is a web app that let you review humans and<br>lets see how it works.</h3>
+            </div>
+            <div class="video-cover4"></div>
+            <video class="about-main-vds" playsinline autoplay loop>
                 <source src="images/man.mp4"></source>
-            </video> -->
-            <div class="about-text-box1">
-                <h1 class="text1">So what is bloom?</h1>
-                <h3 class="text1-sub1">bloom is a web app that let you review humans and<br>lets see how it works.</h3>
+            </video>
+        </div>
+
+        <div class="about-box2">
+            <video class="about-bg-video" playsinline autoplay loop>
+                <source src="images/Dribbble_Zidler_robot.mp4"></source>
+            </video>
+            <div class="video-cover"></div>
+            <div class="about-text-box2">
+                <h1 class="text2">Starting with Group</h1>
+                <h3 class="text2-sub2">Anyone can create group in bloom using the group code<br> others can join your group</h3>
+            </div>
+        </div>
+
+        <div class="about-box3">
+            <div class="about-text-box3">
+                <h1 class="text2">Starting with Group</h1>
+                <h3 class="text2-sub2">Anyone can create group in bloom using the group code<br> others can join your group</h3>
+            </div>
+            <div class="video-cover2"></div>
+            <video class="about-bg-video2" playsinline autoplay loop>
+                <source src="images/Coffre_Zidler.mp4"></source>
+            </video>
+        </div>
+
+
+        <div class="about-box4">
+            <video class="about-bg-video" playsinline autoplay loop>
+                <source src="images/Eye_milkinside.mp4"></source>
+            </video>
+            <div class="video-cover3"></div>
+            <div class="about-text-box2">
+                <h1 class="text2">Starting with Group</h1>
+                <h3 class="text2-sub2">Anyone can create group in bloom using the group code<br> others can join your group</h3>
             </div>
         </div>
 </div>
