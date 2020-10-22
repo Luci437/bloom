@@ -3,7 +3,7 @@
 ?>
 
 <div class="group-detail-container">
-    <div class="group-member-box">
+    <div class="group-member-box" id="group-members-box">
         
     <!-- ** -->
     <?php
@@ -42,6 +42,7 @@
 
     ?>
     <!-- *** -->
+
     </div>
     <div class="group-details-box">
         <div>
