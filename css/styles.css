@@ -1013,6 +1013,10 @@ body::-webkit-scrollbar {
     color: #ffffff42;
     font-weight: lighter;
 }
+.text2-sub4 {
+    color: #9c9c9c;
+    font-weight: lighter;
+}
 .about-bg-video2 {
     position: absolute;
     right: 0;

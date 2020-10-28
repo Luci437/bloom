@@ -24,7 +24,7 @@
         <div class="about-box5">
             <div class="about-text-box3">
                 <h1 class="text2">So what is bloom?</h1>
-                <h3 class="text2-sub2">bloom is a web app that let you review humans and<br>lets see how it works.</h3>
+                <h3 class="text2-sub4">bloom is a web app that let you review humans and<br>lets see how it works.</h3>
             </div>
             <div class="video-cover4"></div>
             <video class="about-main-vds" playsinline autoplay loop>
@@ -45,8 +45,8 @@
 
         <div class="about-box3">
             <div class="about-text-box3">
-                <h1 class="text2">Starting with Group</h1>
-                <h3 class="text2-sub2">Anyone can create group in bloom using the group code<br> others can join your group</h3>
+                <h1 class="text2">Review is locked</h1>
+                <h3 class="text2-sub2">Only group members can review you and your review will be <br> safe with you because all you can see them.</h3>
             </div>
             <div class="video-cover2"></div>
             <video class="about-bg-video2" playsinline autoplay loop>

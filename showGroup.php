@@ -1,5 +1,22 @@
 <?php
     include 'mainTop.php';
+    if(isset($_GET['groupId'])) {
+
+        require 'includes/dh.inc.php';
+        
+
+        $gid = $_GET['groupId'];
+        $uid = $_SESSION['userid'];
+
+        $sql = "SELECT * FROM joinedgroup WHERE group_id='$gid' AND user_id='$uid';";
+        $result = mysqli_query($conn, $sql);
+        $rows = mysqli_num_rows($result);
+        if($rows == 0) {
+            header("Location: myGroup.php");
+            exit();
+        }
+
+    }
 ?>
 
 <div class="group-detail-container">
