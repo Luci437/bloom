@@ -20,6 +20,11 @@
 </head>
 <body>
 
+    <div class="logout-anim-box">
+        <h3 class="logout-heading">Logging out <span><img src="images/ld.svg" class="logout-anim"></span></h3>
+        <h5 class="logout-log">/junk/caches</h5>
+    </div>
+
     <h4 class="copy-message"><i class="fas fa-clipboard pdspace"></i> Code copied</h4>
 
 <?php

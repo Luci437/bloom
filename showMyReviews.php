@@ -28,7 +28,7 @@
                         $i++;
                     }
                     echo '
-                        <div class="review-container">
+                        <div class="review-container review-of-others">
                             <div class="review-user-box"></div>
                             <h3 class="review-text">'.$row['review'].'</h3>
                             <div class="mark-as-read-box">

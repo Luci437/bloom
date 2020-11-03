@@ -21,9 +21,9 @@
 
 <div class="group-detail-container">
     <div class="group-member-box" id="group-members-box">
-        
-    <!-- ** -->
-    <?php
+
+        <!-- ** -->
+        <?php
         if(isset($_GET['groupId'])) {
             $gid = $_GET['groupId'];
             $uid= $_SESSION['userid'];
@@ -58,15 +58,15 @@
         }
 
     ?>
-    <!-- *** -->
-
+        <!-- *** -->
+        <a href="" class="reload-members"><i class="fas fa-redo-alt pdspace"></i> New Members</a>
     </div>
     <div class="group-details-box">
         <div>
             <img src="images/group-image.webp" alt="group-img">
             <div class="image-black-cover"></div>
         </div>
-        
+
 
         <?php
 
@@ -112,7 +112,9 @@
                     $total_members = mysqli_num_rows($result);
 
                     echo '
-                        <h2 class="total-members">'.$total_members.'</h2>
+                        <h2 class="total-members" id="total_">'.$total_members.'</h2>
+                        <input type="hidden" id="group-id" value="'.$gid.'">
+                        <input type="hidden" id="group_t" value="'.$total_members.'">
                     ';
 
                     $sql = "SELECT * FROM reviews WHERE group_id='$gid';";
@@ -140,43 +142,71 @@
                     echo '<a href="includes/leaveGroup.inc.php?groupId='.$groupid.'" class="group-close-button"><i class="fas fa-sign-out-alt pdspace"></i> LEAVE GROUP</a>';
                 }
             ?>
-            
+
+            <!-- to find total group members -->
+            <script>
+                setInterval(() => {
+                    let groupId = $('#group-id').val();
+                    let gpMembers = $('#group_t').val();
+                    console.log(gpMembers);
+                    $.ajax({
+                        url: "ajax/countTotalGroupMembers.ajax.php",
+                        type: "POST",
+                        data: {
+                            groupId: groupId
+                        },
+                        success: function(dataResult) {
+                            if(dataResult != gpMembers) {
+                                $(".reload-members").css("display","block");
+                            }
+                            $('#total_').html(dataResult);
+                            $("#group_t").val(dataResult);
+                        }
+                    });
+                }, 1000);
+            </script>
+            <!-- total group members ends here -->
 
         </div>
-                
+
     </div>
 
-        <script type="text/javascript">
-        randomColors();
-        function randomColors() {
-            let darkValues = ['#7B241C','#5B2C6F','#1A5276','#21618C','#117864','#0E6655','#1D8348','#9A7D0A','#9C640C','#935116','#873600','#515A5A','#212F3C','#1C2833'];
-            let lightValues = ['#A93226','#7D3C98','#2471A3','#2E86C1','#17A589','#138D75','#28B463','#D4AC0D','#D68910','#CA6F1E','#BA4A00','#707B7C','#2E4053','#273746'];
-            let totalColor = darkValues.length;
-            let el = document.getElementsByClassName('group-username');
-            let randNumber;
+    <script type="text/javascript">
+    randomColors();
 
-            for(let i=0; i<el.length; i++) {
-                randNumber = Math.floor(Math.random()*totalColor);
-                el[i].style.background = "linear-gradient("+ lightValues[randNumber] +","+ darkValues[randNumber] +")";
-            }
+    function randomColors() {
+        let darkValues = ['#7B241C', '#5B2C6F', '#1A5276', '#21618C', '#117864', '#0E6655', '#1D8348', '#9A7D0A',
+            '#9C640C', '#935116', '#873600', '#515A5A', '#212F3C', '#1C2833'
+        ];
+        let lightValues = ['#A93226', '#7D3C98', '#2471A3', '#2E86C1', '#17A589', '#138D75', '#28B463', '#D4AC0D',
+            '#D68910', '#CA6F1E', '#BA4A00', '#707B7C', '#2E4053', '#273746'
+        ];
+        let totalColor = darkValues.length;
+        let el = document.getElementsByClassName('group-username');
+        let randNumber;
+
+        for (let i = 0; i < el.length; i++) {
+            randNumber = Math.floor(Math.random() * totalColor);
+            el[i].style.background = "linear-gradient(" + lightValues[randNumber] + "," + darkValues[randNumber] + ")";
         }
+    }
 
 
 
-            var copyTextareaBtn = document.querySelector('.group-code');
+    var copyTextareaBtn = document.querySelector('.group-code');
 
-            copyTextareaBtn.addEventListener('click', function(event) {
-            var copyTextarea = document.querySelector('.group-code');
-            copyTextarea.focus();
-            copyTextarea.select();
-            document.execCommand('copy');
-            console.log("copied");
-            document.getElementsByClassName('copy-message')[0].style.display = "block";
-            setTimeout(() => {
-                document.getElementsByClassName('copy-message')[0].style.display = "none";
-            }, 5000);
-            });
-        </script>
+    copyTextareaBtn.addEventListener('click', function(event) {
+        var copyTextarea = document.querySelector('.group-code');
+        copyTextarea.focus();
+        copyTextarea.select();
+        document.execCommand('copy');
+        console.log("copied");
+        document.getElementsByClassName('copy-message')[0].style.display = "block";
+        setTimeout(() => {
+            document.getElementsByClassName('copy-message')[0].style.display = "none";
+        }, 5000);
+    });
+    </script>
 
 </div>
 

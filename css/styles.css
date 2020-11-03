@@ -645,7 +645,7 @@ body {
     color: #fff;
     padding-left: 16px;
     text-transform: capitalize;
-    width: 75%;
+    width: 64%;
     justify-content: center;
 }
 .review-container:hover .mark-as-read-box{
@@ -654,7 +654,7 @@ body {
 .mark-as-read-box {
     position: absolute;
     right: 8px;
-    width: 24%;
+    width: 32%;
     opacity: 0;
     height: 100%;
     background-image: url("../images/mark_as_read.svg");
@@ -708,7 +708,7 @@ body {
     position: relative;
     width: 100%;
     height: 100%;
-    background: #170D45;
+    background: #16121C;
     display: flex;
     padding: 8px;
     flex-direction: column;
@@ -922,8 +922,7 @@ body {
     position: absolute;
     right: 8px;
     background: rgba(0, 0, 0, 0);
-    width: 32px;
-    height: 32px;
+    padding: 8px 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1123,3 +1122,100 @@ body::-webkit-scrollbar {
     transform: translate(8px, -10px);
     visibility: hidden;
 }
+.logout-anim-box {
+    width: 100%;
+    height: 100vh;
+    z-index: 10000;
+    background: rgba(0,0,0,0.8);
+    backdrop-filter: blur(20px);
+    position: fixed;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.logout-heading {
+    color: rgba(255, 255, 255, 0.932);
+}
+.logout-anim {
+    width: 35px;
+    transform: translate(8px, 10px);
+    opacity: .932;
+}
+.logout-log {
+    font-weight: lighter;
+    color: rgba(255, 255, 255, 0.377);
+    text-align: center;
+    padding: 16px;
+}
+.logout-log:after {
+    animation: text-anim 1s forwards 10;
+    content: '';
+}
+@keyframes text-anim {
+    0% {
+        content: '//bloom.com/user/info.temps/';
+    }
+    10% {
+        content: '//bloom.com/user/info.temps234/';
+    }
+    20% {
+        content: '//bloom.com/user/info/';
+    }
+    30% {
+        content: '//bloom.com/user/data/';
+    }
+    40% {
+        content: '//bloom.com/user/data/cache';
+    }
+    50% {
+        content: '//bloom.com/user/data/cache.clear';
+    }
+    60% {
+        content: '//bloom.com/user/';
+    }
+    70% {
+        content: '//bloom.com/user/images/';
+    }
+    80% {
+        content: '//bloom.com/user/groups/';
+    }
+    90% {
+        content: '//bloom.com/user/attr/';
+    }
+    100% {
+        content: '//bloom.com/user/info.temps/';
+    }
+}
+.review-of-others {
+    width: 70% !important;
+}
+.reload-members {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 16px 32px;
+    border-radius: 50px;
+    background: linear-gradient(to top,rgb(243, 243, 243),white);
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+    top: 50px;
+    font-size:12px;
+    display: none;
+    animation: floating infinite 1s alternate ease;
+}
+@keyframes floating {
+    from {
+        transform: translateX(-50%) translateY(0px);
+    }
+    to {
+        transform: translateX(-50%) translateY(10px);
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        display: none;
+    }
+  }
