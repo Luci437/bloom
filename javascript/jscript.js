@@ -13,11 +13,16 @@ function checkCode() {
                 console.log(dataResult.result);
                 if(dataResult.result == 1) {
                     $(".correct-group").css("opacity","1");
+                    $(".wrong-group").css("opacity","0");
                 }else {
                     $(".correct-group").css("opacity","0");
+                    $(".wrong-group").css("opacity","1");
                 }
             }
         });
+    }else {
+        $(".wrong-group").css("opacity","0");
     }
 }
+
 

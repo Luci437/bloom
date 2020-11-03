@@ -23,6 +23,7 @@
                                     <td>
                                     <input type="text" name="group-code" onkeyup="checkCode()" onpaste="checkCode()" required maxlength="5" id="group-gen-code" class="group-input">
                                     <i class="fas fa-check-circle correct-group"></i>
+                                    <i class="fas fa-times-circle wrong-group"></i>
                                     </td>
                                 </tr>
                                 <tr align="left">

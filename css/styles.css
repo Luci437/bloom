@@ -1108,3 +1108,18 @@ body::-webkit-scrollbar {
     opacity: 0;
     transition: 0.2s ease;
 }
+.wrong-group {
+    position: absolute;
+    color: rgb(255, 75, 75);
+    font-size: 24px;
+    top: 24%;
+    right: 10%;
+    opacity: 0;
+    transition: 0.2s ease;
+}
+.lod-anim {
+    position: absolute;
+    width: 40px;
+    transform: translate(8px, -10px);
+    visibility: hidden;
+}

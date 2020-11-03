@@ -24,6 +24,12 @@
             echo '<p class="logout-message"><i class="fas fa-check-circle"></i> Logged out successfully.</p>';
         }
     }
+    if(isset($_GET['error'])) {
+        if($_GET['error'] == 'invalidToken') {
+            echo '<p class="warning-message"><i class="fas fa-exclamation-triangle pdspace"></i> That token is invalid or expired.</p>';
+        }
+    }
+
     ?>
 
     <div class="top-menu-bar">
