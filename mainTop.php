@@ -79,7 +79,7 @@
             $result = mysqli_query($conn, $sql);
 
             if($row = mysqli_fetch_assoc($result)) {
-                echo '<h2>'.$row['name'].'</h2>';
+                echo '<h2>'.$row['name'].'<a href="account.php" title="Edit Profile"><i class="fas fa-pen account-settings-icon"></i></a></h2>';
                 echo '<h4>'.$row['email'].'</h4>';
             }
             ?>

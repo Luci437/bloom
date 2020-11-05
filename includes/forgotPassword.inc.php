@@ -40,7 +40,12 @@
         }
 
         $today = date("Y/m/d");
-        $the_link = '<a href="http://localhost/bloom/changePassword.php?token='.$token.'">Reset Password</a>';
+        
+        $the_link = '<div style="position: relative;display: flex;flex-direction: column;width: 500px;padding: 8px;justify-content: center;align-items: center;">
+        <h1>Bloom</h1>
+        <h3>Click the below link to change your Password</h3>
+        <a href="http://localhost/bloom/changePassword.php?token='.$token.'" style="background: blue;color: #fff;padding: 12px 40px;">CHANGE PASSWORD</a>
+        </div>';
         $sql = "INSERT INTO forgotpassword(email,created_date,token) VALUES('$toaddress','$today','$token');";
         mysqli_query($conn, $sql);
 
