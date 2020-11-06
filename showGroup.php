@@ -239,6 +239,10 @@
                     </div>
                 ';
             }
+
+            if(mysqli_num_rows(mysqli_query($conn, $sql)) == 0) {
+                echo '<p style="font-weight: bold;color: grey;">You haven\'t added any one to your friends list </p>';
+            }
         ?>
 
     </div>

@@ -39,7 +39,7 @@
                                 </tr>
                                 <tr align="left">
                                     <td style="display: grid;grid-template-columns: repeat(2,1fr);">
-                                        <button name="find-group-form" class="join-button"> Join group</button>
+                                        <button name="find-group-form" class="join-button"><i class="fas fa-check pdspace"></i> Join group</button>
                                         <a href="index.php" class="cancel-button"> Cancel</a>
                                     </td>
                                 </tr>
@@ -66,7 +66,7 @@
                             </tr>
                             <tr align="left">
                             <td style="display: grid;grid-template-columns: repeat(2,1fr);">
-                                    <button name="create-group-form" class="join-button"> Create group</button>
+                                    <button name="create-group-form" class="join-button"><i class="fas fa-check pdspace"></i> Create</button>
                                     <a href="index.php" class="cancel-button"> Cancel</a>
                                 </td>
                             </tr>

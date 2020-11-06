@@ -67,6 +67,7 @@
 
 <div class="main-container">
     <div class="left-container">
+        <a href="account.php" style="position: absolute;top: 5px;right: 5px;z-index: 10;padding: 16px;" title="Edit Profile"><i class="fas fa-cog account-settings-icon"></i></a>
         <div class="user-info-box">
             <div class="image-black-cover"></div>
             <div class="user-infos">
@@ -79,7 +80,7 @@
             $result = mysqli_query($conn, $sql);
 
             if($row = mysqli_fetch_assoc($result)) {
-                echo '<h2>'.$row['name'].'<a href="account.php" title="Edit Profile"><i class="fas fa-pen account-settings-icon"></i></a></h2>';
+                echo '<h2>'.$row['name'].'</h2>';
                 echo '<h4>'.$row['email'].'</h4>';
             }
             ?>

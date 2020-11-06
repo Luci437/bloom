@@ -27,16 +27,22 @@ body {
     font-weight: bold;
     color: rgba(255, 255, 255, 0.64);
     transition: 0.16s ease;
-    padding: 16px 40px;
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
     border-radius: 8px;
 }
 .menus:hover {
     color: rgba(255, 255, 255, 1);
+    padding: 16px 32px;
     background: rgba(255, 255, 255, 0.016);
 }
 .menus:active {
     color: rgb(48, 27, 54);
     background: #fff;
+}
+.menus:hover .name-menu {
+    display: block !important;
 }
 .log-container {
     width: 100%;
@@ -843,7 +849,7 @@ body {
     position: absolute;
     right: 3%;
     top: 18%;
-    color:#33334b;
+    color:#50505f;
     background: #3a31472d;
     font-weight: bold;
     padding: 16px 7px 16px 16px;
@@ -1238,9 +1244,9 @@ body::-webkit-scrollbar {
     }
 }
 .account-settings-icon {
-    font-size: 16px;
+    font-size: 24px;
     padding-left: 13px;
-    color: rgba(255, 255, 255, 0.473);
+    color: rgba(255, 255, 255, 0.945);
 }
 .settings-icon {
     position: absolute;
@@ -1268,6 +1274,7 @@ body::-webkit-scrollbar {
     display: flex;
     justify-content: center;
     align-items: center;
+    row-gap: 30px;
 }
 .account-box {
     position: relative;
@@ -1278,9 +1285,6 @@ body::-webkit-scrollbar {
     align-items: center;
     flex-direction: column;
 }
-.as-bx {
-    transform: translateY(50px) !important;    
-}
 /* @media only screen and (max-width: 600px) {
     body {
         display: none;
@@ -1288,7 +1292,7 @@ body::-webkit-scrollbar {
   } */
 .friends-box-account {
     position: absolute;
-    top: 12%;
+    top: 4%;
     width: 100%;
     padding: 10px 30px;
     left: 0;
@@ -1381,7 +1385,7 @@ body::-webkit-scrollbar {
     position: absolute;
     right: 3%;
     top: 5%;
-    color:#33334b;
+    color:#50505f;
     background: #3a31472d;
     padding: 16px 7px 16px 16px;
     font-weight: bold;
@@ -1432,6 +1436,7 @@ body::-webkit-scrollbar {
     position: absolute;
     top: -24px;
     color: #fff;
+    font-weight: bold;
 }
 #close-add-friends-box {
     position: absolute;
@@ -1441,4 +1446,58 @@ body::-webkit-scrollbar {
     padding: 16px;
     font-size: 24px;
     cursor: pointer;
+}
+.name-menu {
+    display: none;
+}
+.notification-circle {
+    font-size: 5px;
+    position: absolute;
+    color: red !important;
+    transform: translateX(14px) translateY(-3px);
+}
+.notification-box {
+    position: absolute;
+    padding: 8px;
+    width: 320px;
+    top: 54px;
+    right: -18px;
+    background: rgba(255, 255, 255, 0.021);
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+    z-index: 10;
+    display: none;
+    flex-direction: column;
+    row-gap: 8px;
+    max-height: 300px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.notification-box::-webkit-scrollbar {
+    width: 3px;
+}
+.noti-bars {
+    display: flex;
+    padding: 12px;
+    border-radius: 8px;
+}
+.noti-icon {
+    color: rgba(255, 255, 255, 0.478);
+}
+.noti-text {
+    color: rgba(255, 255, 255, 0.478);
+    font-size: 14px;
+    padding-left: 16px;
+}
+.noti-bars:hover {
+    background: rgba(255, 255, 255, 0.021);
+}
+.noti-bars:hover .noti-icon {
+    color: rgb(108, 255, 115);
+}
+.noti-bars:hover .noti-text {
+    color: rgb(255, 255, 255);
+}
+#notibar:focus + #notilabel {
+    display: none;
 }

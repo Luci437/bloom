@@ -45,7 +45,7 @@
     <div class="top-menu-bar">
         <img src="images/logo.svg" alt="logo" class="logo-img">
         
-        <div>
+        <div style="display: flex;column-gap: 8px;">
             <a href="login.php" class="menus">Login</a>
             <a href="signup.php" class="menus">Signup</a>
         </div>

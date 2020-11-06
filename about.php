@@ -11,11 +11,11 @@
 <body>
     <style>
         .active-about {
-            background: rgba(255,255,255,0.2);
             color: #fff;
         }
     </style>
     <?php
+        session_start();
         include "headpart.php";
     ?>
 
