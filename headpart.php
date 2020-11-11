@@ -27,6 +27,7 @@
                     container.hide();
                     $('.notimenu').css("display","none");
                     $('.fa-bell').css("color","rgba(255, 255, 255, 0.64)");
+                    $('.notification-button').css("padding","16px 10px 16px 16px");
                 }
             });
         </script>
@@ -96,6 +97,7 @@ $('.notification-button').on('click', function() {
     $('.notification-box').fadeToggle();
     $('.notimenu').css({"display":"flex","color":"white"});
     $('.fa-bell').css("color","white");
+    $('.notification-button').css("padding","16px 32px");
 });
 
 function checkNotification(notibox) {

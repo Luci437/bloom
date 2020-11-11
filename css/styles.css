@@ -576,11 +576,11 @@ body {
 }
 .review-icon {
     position: absolute;
-    padding: 14px;
+    padding: 18px;
     color: rgb(44, 44, 44);
-    font-size: 23px;
+    font-size: 18px;
     border-radius: 8px 0 0 8px;
-    background: linear-gradient( rgb(20, 20, 20),rgb(15, 15, 15));
+    background: linear-gradient( rgba(20, 20, 20, 0),rgba(15, 15, 15, 0));
 }
 .group-username {
     padding: 4px 16px;
@@ -863,7 +863,8 @@ body {
     text-align: center;
     position: absolute;
     bottom: 2%;
-    width: 100%;
+    width: 96%;
+    left: 2%;
     text-align: center;
     color:#33334b;
     background: #3a31472d;
@@ -948,24 +949,18 @@ body {
     color: #fff;
 }
 .close-button {
-    position: absolute;
-    right: 12px;
-    top: 18px;
-    background: rgba(0, 0, 0, 0);
+    position: relative;
     padding: 14px 16px;
-    display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 4px;
-    color: #211b2700;
+    background: #221e27d2;
+    color: rgba(255, 255, 255, 0.103);
     z-index: 3;
 }
 .close-button:hover {
     background: rgba(250, 9, 9, 0.068);
     color: rgb(148, 18, 18) !important;
-}
-.review-box:hover .close-button{
-    color: #615252;
 }
 .forgot-password-link {
     position: relative;
@@ -1036,6 +1031,7 @@ body::-webkit-scrollbar {
 }
 .text2 {
     font-size: 64px;
+    font-family: 'Dreamscape Sans';
     color: #ffffff;
 }
 .text2-sub2 {
@@ -1314,6 +1310,18 @@ body::-webkit-scrollbar {
     cursor: pointer;
     animation: bubble 0.5s forwards cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
+.friends-box2 {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient( rgb(73, 46, 192),rgb(84, 25, 139));
+    border-radius: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    animation: bubble 0.5s forwards cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
 @keyframes bubble {
     from {
         transform: scale(0);
@@ -1351,14 +1359,18 @@ body::-webkit-scrollbar {
 .friends-box:hover .friends-full-name {
     opacity: 1;
 }
+.friends-box2:hover .remove-friend {
+    opacity: 1;
+}
+.friends-box2:hover .friends-full-name {
+    opacity: 1;
+}
 .already-friend-button {
-    position: absolute;
-    top: 22px;
-    right: 1%;
     background: rgba(255, 255, 255, 0.014);
     color: rgba(255, 255, 255, 0.11);
     padding: 12px 32px;
     border-radius: 4px;
+    display: flex;
     cursor: default;
     transition: 0.2s ease-out;
 }
@@ -1367,19 +1379,20 @@ body::-webkit-scrollbar {
     top: 18px;
 }
 .add-friend-button {
-    position: absolute;
-    top: 18px;
-    right: 10%;
     background: rgba(255, 255, 255, 0.123);
     color: rgba(255, 255, 255, 0.301);
     padding: 12px 32px;
     border-radius: 4px;
     font-weight: bold;
+    display: flex;
     z-index: 10;
     opacity: 0;
 }
 .review-box:hover .add-friend-button {
     opacity: 1;
+}
+.open-add-friend {
+    display: none;
 }
 .add-friends-buttons {
     position: absolute;
@@ -1394,13 +1407,30 @@ body::-webkit-scrollbar {
     z-index: 10;
     transition: 0.2s ease;
 }
-.open-add-friend {
-    display: none;
-}
 .add-friends-buttons:hover .open-add-friend {
     display: flex;
 }
 .add-friends-buttons:hover {
+    color: #fff !important;
+    padding: 16px 34px;
+}
+.add-friends-buttons2 {
+    position: absolute;
+    right: 3%;
+    top: 5%;
+    color:#50505f;
+    background: #3a31472d;
+    padding: 16px 7px 16px 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    display: flex;
+    z-index: 10;
+    transition: 0.2s ease;
+}
+.add-friends-buttons2:hover .open-add-friend {
+    display: flex;
+}
+.add-friends-buttons2:hover {
     color: #fff !important;
     padding: 16px 34px;
 }
@@ -1439,6 +1469,15 @@ body::-webkit-scrollbar {
     font-weight: bold;
 }
 #close-add-friends-box {
+    position: absolute;
+    top: 1%;
+    right: 1%;
+    color: #fff;
+    padding: 16px;
+    font-size: 24px;
+    cursor: pointer;
+}
+.close-add-friends-box2 {
     position: absolute;
     top: 1%;
     right: 1%;
@@ -1500,4 +1539,203 @@ body::-webkit-scrollbar {
 }
 #notibar:focus + #notilabel {
     display: none;
+}
+.group-options {
+    position: absolute;
+    top: -90px;
+    left: 0;
+    width: 100%;
+    padding: 24px 24px 24px 60px;
+    box-sizing: border-box;
+    background: #16121C;
+    z-index: 12;
+    display: flex;
+    justify-content: space-evenly;
+    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.pulldownarrow {
+    position: absolute;
+    bottom: -40px;
+    transform: translateX(-10px);
+    color: rgba(255, 255, 255, 0.308);
+    padding: 32px 32px 24px 32px;
+    background:#16121C;
+    font-size: 24px;
+    clip-path: circle(30.8% at 50% 50%);
+}
+.group-options:hover {
+    top: 0;
+}
+.group-options:hover .pulldownarrow {
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 10px rgb(255, 255, 255);
+}
+.inside-review-option-box {
+    position: absolute;
+    top: 12px;
+    right: 0;
+    display: flex;
+    padding: 8px;
+    column-gap: 8px;
+}
+#second-add-friends-box {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    backdrop-filter: blur(10px);
+    top: 0;
+    left: 0;
+    z-index: 12;
+    display: none;
+    column-gap: 16px;
+    justify-content: center;
+    align-items: center;
+}
+.delete-big-box {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(10px);
+    z-index: 13;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 16px;
+}
+.del-buttons {
+    border: none;
+    background: rgba(255, 255, 255, 0.034);
+    color: grey;
+    border-radius: 8px;
+    font-weight: bold;
+    padding: 16px 40px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.actual-del {
+    background: linear-gradient(rgb(255, 96, 96),rgb(252, 79, 79));
+    color: #fff;
+}
+.actual-del:hover {
+    background: rgb(240, 54, 54);
+}
+.main-broadcaste {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/attention_bg.png');
+    background-size: cover;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    padding: 24px;
+    box-sizing: border-box;
+}
+.main-broadcaste h1 {
+    color: rgb(255, 255, 255);
+    transform: translateY(40px);
+    font-size: 24px;
+}
+.load-box {
+    width: 100%;
+    padding: 10px;
+}
+.loder {
+    padding: 2px;
+    background: white;
+    border-radius: 5px;
+    width: 0;
+    animation: ldr 1s linear forwards;
+}
+@keyframes ldr {
+    0% {
+        width: 0;
+    }
+    99% {
+        width: 100%;
+    }
+    100% {
+        visibility: hidden;
+    }
+}
+.attention-list {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(10px);
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.507);
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+    flex-direction: column;
+    overflow-y: scroll;
+    padding-top: 64px;
+    box-sizing: border-box;
+    visibility: hidden;
+    animation: 1s 1s app1 forwards;
+}
+.attention-list::-webkit-scrollbar {
+    width: 5px;
+    background: transparent;
+}
+.attention-note {
+    position: relative;
+    color: rgba(255, 255, 255, 0.705);
+    padding: 16px;
+    background: linear-gradient(rgba(255,255,255,0.048), rgba(255, 255, 255, 0.028));
+    border-radius: 8px;
+    transition: 0.2s ease;
+    font-size: 14px;
+    font-family: 'Montserrat';
+    padding-bottom: 32px;
+}
+.attention-note:hover {
+    background: linear-gradient(rgb(109, 109, 255),rgb(99, 99, 230));
+    color: ivory;
+}
+.date-attention {
+    color: rgba(255, 255, 255, 0.637);
+    position: absolute;
+    right: 8px;
+    bottom: 4px;
+    font-size: 10px;
+}
+.inside-list {
+    background: rgba(255,255,255,0.048);
+    padding: 8px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+    width: 80%;
+}
+@keyframes app1 {
+    from {
+        visibility: hidden;
+    }
+    to {
+        visibility: visible;
+    }
+}
+.close-attention {
+    position: absolute;
+    right: 8px;
+    top: 16px;
+    color: #fff;
+    padding: 8px;
+    cursor: pointer;
+}
+.close-attention:hover {
+    color: red;
 }

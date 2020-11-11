@@ -51,6 +51,9 @@
         if($_GET['success'] == 'kicked') {
             echo '<p class="logout-message"><i class="fas fa-check-circle pdspace"></i> Member has been kicked.</p>';
         }
+        if($_GET['success'] == 'gpDeleted') {
+            echo '<p class="logout-message"><i class="fas fa-check-circle pdspace"></i> Group Deleted successfully.</p>';
+        }
     }
     if(isset($_GET['error'])) {
         if($_GET['error'] == 'privateGroup') {

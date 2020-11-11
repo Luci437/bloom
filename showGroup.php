@@ -21,6 +21,61 @@
 
 <div class="group-detail-container">
     <div class="group-member-box" id="group-members-box">
+    <?php
+
+    require "includes/dh.inc.php";
+    $gid = $_GET['groupId'];
+    $sql = "SELECT * FROM broadcast WHERE group_id='$gid';";
+    $result = mysqli_query($conn, $sql);
+    if(mysqli_num_rows($result) > 0) {
+        echo '
+        <div class="main-broadcaste">
+        <div class="load-box"><section class="loder"></section>
+        <div class="attention-list">
+        <i class="fas fa-times close-attention"></i>
+            <section class="inside-list">
+                <h5 style="color: white;"><i class="fas fa-bullhorn pdspace"></i>ATTENTION DEAR FELLOW MATES</h5>
+                ';
+                while($row = mysqli_fetch_assoc($result)) {
+                    echo '
+                    <p class="attention-note">
+                    <i class="fas fa-angle-double-right pdspace"></i>'.$row['broadcast_message'].'
+                    <span class="date-attention">'.$row['message_date'].'</span>
+                    </p>   
+                    ';
+                }
+        echo '
+            </section>
+        </div>
+        </div>
+        </div>
+        ';
+    }
+    // $sql = "UPDATE broadcast SET message_status=1 WHERE group_id='$gid' AND message_status=0;";
+    // mysqli_query($conn, $sql);
+    ?>
+    <script>
+        $('.close-attention').on('click', function() {
+            $('.main-broadcaste').css('display','none');
+        });
+    </script>
+        <?php
+            require "includes/dh.inc.php";
+
+            $gid = $_GET['groupId'];
+            $uid = $_SESSION['userid'];
+
+            $sql = "SELECT * FROM groups WHERE user_id='$uid' AND id='$gid';";
+            $result = mysqli_query($conn, $sql);
+            if(mysqli_num_rows($result)>0) {
+                echo '<div class="group-options">
+                <a href="#" class="add-friends-buttons2 second-add-friend0-button" style="position: relative;padding: 16px 32px;"><i class="fas fa-plus-square pdspace"></i> ADD FRIENDS</a>
+                <a href="#" class="add-friends-buttons" style="position: relative;padding: 16px 32px;"><i class="fas fa-bullhorn pdspace"></i> BROADCAST</a>
+                <a href="#" class="group-close-button delgp" style="position: relative;padding: 16px 32px;"><i class="fas fa-trash pdspace"></i> DELETE GROUP</a>
+                <i class="fas fa-chevron-down pulldownarrow"></i>
+                </div>';
+            }
+        ?>
 
         <!-- ** -->
         <?php
@@ -30,11 +85,13 @@
             $sql = "SELECT u.name,u.id,u.email, g.group_id FROM users u,joinedgroup g WHERE g.group_id='$gid' AND g.user_id=u.id ORDER BY u.name;";
             $result = mysqli_query($conn, $sql);
             $total_members = mysqli_num_rows($result);
+
+            
             while($row = mysqli_fetch_assoc($result)) {
                 if($row['id'] != $uid) {
                     echo '
                     <div class="review-box">
-                        <a href="includes/kick.inc.php?userId='.$row['id'].'&groupId='.$row['group_id'].'"><i class="fas fa-times close-button"></i></a>';
+                    <div class="inside-review-option-box">';
                         $fid = $row['id'];
                         $sql2 = "SELECT * FROM myfriends WHERE user_id='$uid' AND friend_id='$fid';";
                         $results = mysqli_query($conn, $sql2);
@@ -45,7 +102,14 @@
                         }else {
                             echo '<a href="includes/addFriend.inc.php?id='.$fid.'&gid='.$gid.'" class="add-friend-button"><i class="fas fa-user-plus pdspace"></i> Add Friend</a>';
                         }
-                    echo '<div class="review-top">
+
+                        $qry = "SELECT * FROM groups WHERE user_id='$uid' AND id='$gid';";
+                        $resultss = mysqli_query($conn, $qry);
+                        if(mysqli_num_rows($resultss)>0) {
+                            echo '<a href="includes/kick.inc.php?userId='.$row['id'].'&groupId='.$row['group_id'].'"><i class="fas fa-times close-button"></i></a>';
+                        }
+                    echo '
+                    </div><div class="review-top">
                         <h4 class="group-username">@ '.$row['name'].'</h4>
                         <h5 class="group-user-about">'.$row['email'].'</h5>
                     </div>
@@ -62,8 +126,6 @@
             }
             if($total_members <= 1) {
                 echo '<div class="empty-group">
-                        <a href="#" class="add-friends-buttons"><i class="fas fa-plus-square pdspace"></i> <span class="open-add-friend">ADD FRIENDS<span></a>
-                        <a title="Kick" href="includes/deleteGroup.inc.php?groupId='.$gid.'" class="group-close-button"><i class="fas fa-trash pdspace"></i> <span class="open-del">DELETE GROUP</span></a>
                     </div>';
             }
         }
@@ -156,24 +218,24 @@
 
             <!-- to find total group members -->
             <script>
-                setInterval(() => {
-                    let groupId = $('#group-id').val();
-                    let gpMembers = $('#group_t').val();
-                    $.ajax({
-                        url: "ajax/countTotalGroupMembers.ajax.php",
-                        type: "POST",
-                        data: {
-                            groupId: groupId
-                        },
-                        success: function(dataResult) {
-                            if(dataResult != gpMembers) {
-                                $(".reload-members").css("display","block");
-                            }
-                            $('#total_').html(dataResult);
-                            $("#group_t").val(dataResult);
+            setInterval(() => {
+                let groupId = $('#group-id').val();
+                let gpMembers = $('#group_t').val();
+                $.ajax({
+                    url: "ajax/countTotalGroupMembers.ajax.php",
+                    type: "POST",
+                    data: {
+                        groupId: groupId
+                    },
+                    success: function(dataResult) {
+                        if (dataResult != gpMembers) {
+                            $(".reload-members").css("display", "block");
                         }
-                    });
-                }, 1000);
+                        $('#total_').html(dataResult);
+                        $("#group_t").val(dataResult);
+                    }
+                });
+            }, 1000);
             </script>
             <!-- total group members ends here -->
 
@@ -218,12 +280,12 @@
     });
     </script>
 
-<div class="your-friend-list-box">
-<p id="close-add-friends-box"><i class="fas fa-times"></i></p>
-    <div class="friends-zone">
-        <p class="outer-title">Your Friends List</p>
+    <div class="your-friend-list-box">
+        <a id="close-add-friends-box"><i class="fas fa-times"></i></a>
+        <div class="friends-zone">
+            <p class="outer-title">Your Friends List</p>
 
-        <?php
+            <?php
             require "includes/dh.inc.php";
             $uid = $_SESSION['userid'];
             $gid = $_GET['groupId'];
@@ -245,9 +307,9 @@
             }
         ?>
 
-    </div>
+        </div>
 
-    <script>
+        <script>
         function addToGroup(userid) {
             let val = $(userid).attr('data-person-name');
             let gid = $('#group-id').val();
@@ -260,52 +322,141 @@
                 },
                 success: function(dataResults) {
                     console.log(dataResults);
-                    if(dataResults == "Added") {
-                        $(userid).css("background","linear-gradient(#78f446,#45b738)");
-                    }else {
-                        $(userid).css("background","linear-gradient( rgb(73, 46, 192),rgb(84, 25, 139))");
+                    if (dataResults == "Added") {
+                        $(userid).css("background", "linear-gradient(#78f446,#45b738)");
+                    } else {
+                        $(userid).css("background", "linear-gradient( rgb(73, 46, 192),rgb(84, 25, 139))");
                     }
                 }
             });
         }
-    </script>
-
-
-
-    <script>
-            if(document.getElementsByClassName('friends-short-name')) {
-                let el = document.getElementsByClassName('friends-short-name');
-                let el2 = document.getElementsByClassName('friends-box')
-                let totalLength = el.length;
-
-                for(let i=0;i<totalLength;i++) {
-                    let firtWord = el[i].innerHTML.substr(0,1);
-                    el[i].innerHTML = firtWord;
-                }
-
-                let midPoint = parseInt(totalLength / 2);
-                let midSecPoint = midPoint;                
-
-                    setInterval(() => {
-                    if(midSecPoint != totalLength+1) {
-                        el2[midPoint--].style.display = "flex";
-                        el2[midSecPoint++].style.display = "flex";
-                    }else {
-                        clearInterval(this);
-                    }
-                }, 100);
-            }
-
-            $('#close-add-friends-box').on('click', function(){
-                $('.your-friend-list-box').css("display","none");
-            });
-
-            $('.add-friends-buttons').on('click',function(){
-                $('.your-friend-list-box').css("display","flex");
-            });
         </script>
 
-</div>
+
+
+        <script>
+        if (document.getElementsByClassName('friends-short-name')) {
+            let el = document.getElementsByClassName('friends-short-name');
+            let el2 = document.getElementsByClassName('friends-box')
+            let totalLength = el.length;
+
+            for (let i = 0; i < totalLength; i++) {
+                let firtWord = el[i].innerHTML.substr(0, 1);
+                el[i].innerHTML = firtWord;
+            }
+
+            let midPoint = parseInt(totalLength / 2);
+            let midSecPoint = midPoint;
+
+            setInterval(() => {
+                if (midSecPoint != totalLength + 1) {
+                    el2[midPoint--].style.display = "flex";
+                    el2[midSecPoint++].style.display = "flex";
+                } else {
+                    clearInterval(this);
+                }
+            }, 100);
+        }
+        </script>
+
+    </div>
+
+        <!-- the second add friend  -->
+        <div id="second-add-friends-box">
+            <a href="" class="close-add-friends-box2"><i class="fas fa-times" ></i></a>
+        </div>
+        <!-- ends here -->
+        <script>
+            $('.second-add-friend0-button').on('click', function() {
+                $('#second-add-friends-box').css("display","flex");
+                let gid = $('#group-id').val();
+
+                $.ajax({
+                    url: 'ajax/secondAddFriends.ajax.php',
+                    type: 'POST',
+                    data: {
+                        gid: gid
+                    },
+                    success: function(Result) {
+                        $('#second-add-friends-box').html(Result);
+                        
+                        if (document.getElementsByClassName('friends-short-name')) {
+                            let el = document.getElementsByClassName('friends-short-name');
+                            let el2 = document.getElementsByClassName('friends-box')
+                            let totalLength = el.length;
+
+                            for (let i = 0; i < totalLength; i++) {
+                                let firtWord = el[i].innerHTML.substr(0, 1);
+                                el[i].innerHTML = firtWord;
+                            }
+
+                            let midPoint = parseInt(totalLength / 2);
+                            let midSecPoint = midPoint;
+
+                            setInterval(() => {
+                                if (midSecPoint != totalLength + 1) {
+                                    el2[midPoint--].style.display = "flex";
+                                    el2[midSecPoint++].style.display = "flex";
+                                } else {
+                                    clearInterval(this);
+                                }
+                            }, 100);
+                        }
+                        
+                    }
+                });
+            });
+
+            function closeSecondBox() {
+                $('#second-add-friends-box').css("display","none");
+                console.log('eee');
+            }
+        </script>
+
+        <div class="delete-big-box">
+            <h2 style="color: #fff;">Are you sure?</h2><h4 style="color: grey;font-weight: lighter;transform: translateY(-14px);"> you want to delete this group...</h4>
+            <div style="display: flex;column-gap: 16px;">
+                <button class="del-buttons actual-del"><i class="fas fa-trash pdspace"></i>DELETE</button>                    
+                <button class="del-buttons" onclick="clearBigDelBox()">CANCEL</button>
+            </div>
+        </div>
+
+        <script>
+            $('.actual-del').on('click', function() {
+                let gid = $('#group-id').val();
+                $.ajax({
+                    url: 'ajax/deleteGroup.ajax.php',
+                    type: 'POST',
+                    data: {
+                        gid: gid
+                    },
+                    success: function(Result) {
+                        if(Result == "success") {
+                            let gpLeng = $('.review-box').length;
+                            let el = document.getElementsByClassName('review-box');
+                            $('.delete-big-box').css("display","none");
+                            setInterval(() => {
+                                if(gpLeng != 0) {
+                                    el[gpLeng - 1].style.display = "none";
+                                    gpLeng--;
+                                }else {
+                                    clearInterval();
+                                    window.location = "myGroup.php?success=gpDeleted";
+                                }
+                            }, 160);
+                        }
+                    }
+                });
+            });
+
+            $('.delgp').on('click', function() {
+                $('.delete-big-box').css("display","flex");
+            });
+
+            function clearBigDelBox() {
+                $('.delete-big-box').css("display","none");
+            }
+        </script>
 </div>
 
 <?php
