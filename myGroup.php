@@ -52,7 +52,15 @@
                             <h3 class="group-each-name">'.$row['group_name'].'</h3>
                             <h4 class="group-each-username"><i class="fas fa-lock'.$door_type.'" style="padding-right: 5px;"></i> '.$row['group_type'].'</h4>
                         </div>
-                        <h5 class="total-members-in-each-group"><i class="fas fa-eye"></i> '.$totalmembers.'</h5>
+                        <h5 class="total-members-in-each-group ';
+                        
+                        $qry = "SELECT * FROM groups WHERE id='$gid' AND user_id='$uid';";
+                        $ans = mysqli_query($conn, $qry);
+                        if(mysqli_num_rows($ans)>0) {
+                            echo 'animation-fade';
+                        }
+
+                        echo '"><i class="fas fa-eye"></i> '.$totalmembers.'</h5>
                     </div></a>
                 ';
             }

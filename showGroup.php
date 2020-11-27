@@ -25,8 +25,10 @@
 
     require "includes/dh.inc.php";
     $gid = $_GET['groupId'];
-    $sql = "SELECT * FROM broadcast WHERE group_id='$gid';";
+    $uid = $_SESSION['userid'];
+    $sql = "SELECT bc.id, bc.broadcast_message, bc.message_date FROM broadcast bc,broadcast_seen_users bs WHERE bc.group_id='$gid' AND bc.id=bs.broad_id AND bs.broad_status=0 AND bs.user_id='$uid';";
     $result = mysqli_query($conn, $sql);
+    $broad_id = 0;
     if(mysqli_num_rows($result) > 0) {
         echo '
         <div class="main-broadcaste">
@@ -37,12 +39,15 @@
                 <h5 style="color: white;"><i class="fas fa-bullhorn pdspace"></i>ATTENTION DEAR FELLOW MATES</h5>
                 ';
                 while($row = mysqli_fetch_assoc($result)) {
+                    $broad_id = $row['id'];
                     echo '
                     <p class="attention-note">
                     <i class="fas fa-angle-double-right pdspace"></i>'.$row['broadcast_message'].'
                     <span class="date-attention">'.$row['message_date'].'</span>
                     </p>   
                     ';
+                    $sql = "UPDATE broadcast_seen_users SET broad_status=1 WHERE broad_id='$broad_id' AND user_id='$uid';";
+                    mysqli_query($conn, $sql);
                 }
         echo '
             </section>
@@ -50,6 +55,8 @@
         </div>
         </div>
         ';
+
+
     }
     // $sql = "UPDATE broadcast SET message_status=1 WHERE group_id='$gid' AND message_status=0;";
     // mysqli_query($conn, $sql);
@@ -70,7 +77,7 @@
             if(mysqli_num_rows($result)>0) {
                 echo '<div class="group-options">
                 <a href="#" class="add-friends-buttons2 second-add-friend0-button" style="position: relative;padding: 16px 32px;"><i class="fas fa-plus-square pdspace"></i> ADD FRIENDS</a>
-                <a href="#" class="add-friends-buttons" style="position: relative;padding: 16px 32px;"><i class="fas fa-bullhorn pdspace"></i> BROADCAST</a>
+                <a href="#" onclick="showAnnounceInputBox()" class="add-friends-buttons" style="position: relative;padding: 16px 32px;"><i class="fas fa-bullhorn pdspace"></i> BROADCAST</a>
                 <a href="#" class="group-close-button delgp" style="position: relative;padding: 16px 32px;"><i class="fas fa-trash pdspace"></i> DELETE GROUP</a>
                 <i class="fas fa-chevron-down pulldownarrow"></i>
                 </div>';
@@ -106,7 +113,7 @@
                         $qry = "SELECT * FROM groups WHERE user_id='$uid' AND id='$gid';";
                         $resultss = mysqli_query($conn, $qry);
                         if(mysqli_num_rows($resultss)>0) {
-                            echo '<a href="includes/kick.inc.php?userId='.$row['id'].'&groupId='.$row['group_id'].'"><i class="fas fa-times close-button"></i></a>';
+                            echo '<a href="includes/kick.inc.php?userId='.$row['id'].'&groupId='.$row['group_id'].'" class="kickout-btn"><i class="fas fa-times close-button"></i><span class="kick-span">KICK OUT</span></a>';
                         }
                     echo '
                     </div><div class="review-top">
@@ -115,7 +122,7 @@
                     </div>
                     <form method="POST" action="includes/sendReview.inc.php" class="review-bottom">
                     <i class="fas fa-comment-alt review-icon"></i>
-                        <input type="text" placeholder="Say something about '.$row['name'].'" class="review-input" id="review" require name="review">
+                        <input type="text" placeholder="Say something about '.$row['name'].'" class="review-input" maxlength="500" id="review" require name="review">
                         <input type="hidden" id="userid" name="userid" value="'.$row['id'].'">
                         <input type="hidden" id="groupid" name="groupid" value="'.$row['group_id'].'">
                         <button type="submit" name="review-submit" class="review-button"><i class="fas fa-paper-plane pdspace"></i> send</button>
@@ -289,7 +296,6 @@
             require "includes/dh.inc.php";
             $uid = $_SESSION['userid'];
             $gid = $_GET['groupId'];
-            echo '<input type="hidden" value='.$gid.' id="group-id">';
             $sql = "SELECT user.name,user.id FROM users user,myfriends fri WHERE user.id=fri.friend_id AND fri.user_id='$uid';";
             $result = mysqli_query($conn, $sql);
 
@@ -349,11 +355,11 @@
             let midSecPoint = midPoint;
 
             setInterval(() => {
-                if (midSecPoint != totalLength + 1) {
+                if (midSecPoint <= totalLength + 1 && midPoint > 0) {
                     el2[midPoint--].style.display = "flex";
                     el2[midSecPoint++].style.display = "flex";
                 } else {
-                    clearInterval(this);
+                    clearInterval();
                 }
             }, 100);
         }
@@ -389,18 +395,6 @@
                                 let firtWord = el[i].innerHTML.substr(0, 1);
                                 el[i].innerHTML = firtWord;
                             }
-
-                            let midPoint = parseInt(totalLength / 2);
-                            let midSecPoint = midPoint;
-
-                            setInterval(() => {
-                                if (midSecPoint != totalLength + 1) {
-                                    el2[midPoint--].style.display = "flex";
-                                    el2[midSecPoint++].style.display = "flex";
-                                } else {
-                                    clearInterval(this);
-                                }
-                            }, 100);
                         }
                         
                     }
@@ -416,13 +410,13 @@
         <div class="delete-big-box">
             <h2 style="color: #fff;">Are you sure?</h2><h4 style="color: grey;font-weight: lighter;transform: translateY(-14px);"> you want to delete this group...</h4>
             <div style="display: flex;column-gap: 16px;">
-                <button class="del-buttons actual-del"><i class="fas fa-trash pdspace"></i>DELETE</button>                    
+                <button class="del-buttons actual-del" onclick="del_grp()"><i class="fas fa-trash pdspace"></i>DELETE</button>                    
                 <button class="del-buttons" onclick="clearBigDelBox()">CANCEL</button>
             </div>
         </div>
 
         <script>
-            $('.actual-del').on('click', function() {
+            function del_grp() {
                 let gid = $('#group-id').val();
                 $.ajax({
                     url: 'ajax/deleteGroup.ajax.php',
@@ -447,7 +441,7 @@
                         }
                     }
                 });
-            });
+            }
 
             $('.delgp').on('click', function() {
                 $('.delete-big-box').css("display","flex");
@@ -456,7 +450,30 @@
             function clearBigDelBox() {
                 $('.delete-big-box').css("display","none");
             }
+
+            function clearAnnounceInputBox() {
+                $('.broad-input-box').css('display','none');
+            }
+
+            function showAnnounceInputBox() {
+                $('.broad-input-box').css('display','flex');
+            }
         </script>
+
+        <div class="broad-input-box">
+            <i class="fas fa-times close-announce-input-box" onclick="clearAnnounceInputBox()"></i>
+            <h4 style="color: #fff;">SAY SOMETHING HERE</h4>
+            <form method="POST" action="includes/announce.inc.php" style="display: flex;column-gap: 16px;">
+                <?php
+                    if(isset($_GET['groupId'])) {
+                        $gid = $_GET['groupId'];
+                        echo '<input type="hidden" name="gid" value="'.$gid.'">';
+                    }
+                ?>
+                <input type="text" class="broad-input" name="broad-message" placeholder="Type here to announce">
+                <button type="submit" name="announce-submit" class="broad-button"><i class="fas fa-bullhorn pdspace"></i> ANNOUNCE</button>
+            </form>
+        </div>
 </div>
 
 <?php

@@ -31,6 +31,7 @@
     <title>Change Password | bloom</title>
     <link rel="stylesheet" href="css/styles.css">
     <script src="ajax/jquery-3.5.1.min.js"></script>
+    
 </head>
 <body>
 
@@ -107,6 +108,9 @@
             }
         });
     </script>
-
+    <div class="change-password-error-message-box" id="pass-error-box">
+        
+    </div>
 </body>
+<script src="javascript/jscript.js"></script>
 </html>

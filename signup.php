@@ -39,7 +39,7 @@
 
                 <div class="sub-login-box">
                     <label for="name" class="input-label">Name</label>
-                    <input type="text" class="input-box" required id="name" name="name">
+                    <input type="text" class="input-box" pattern="[a-zA-Z0-9\s]+" required id="name" name="name">
                 </div>
 
                 <div class="sub-login-box">

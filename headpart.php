@@ -2,6 +2,8 @@
     <a href="index.php"><img src="images/logo.svg" alt="logo" class="logo-img"></a>
 
     <div style="display: flex;position: relative;">
+    <a href="index.php" class="menus active-home"><i class="fas fa-home pdspace"></i> <span
+        class="name-menu">Home</span></a>
         <a href="#" class="menus notification-button"><i class="fas fa-bell pdspace"></i>
         <?php
             require "includes/dh.inc.php";
@@ -30,10 +32,12 @@
                     $('.notification-button').css("padding","16px 10px 16px 16px");
                 }
             });
+
         </script>
 
         <!-- end here -->
-
+        <a href="account.php" class="menus active-settings"><i class="fas fa-cog pdspace"></i> <span
+        class="name-menu">Settings</span></a>
         <a href="about.php" class="menus active-about"><i class="fas fa-info-circle pdspace"></i> <span
                 class="name-menu">About bloom</span></a>
         <a id="logout-btn" href="#" class="menus"><i class="fas fa-sign-in-alt pdspace"></i> <span

@@ -69,8 +69,8 @@
     ?>
 
 <div class="main-container">
-    <div class="left-container">
-        <a href="account.php" style="position: absolute;top: 5px;right: 5px;z-index: 10;padding: 16px;" title="Edit Profile"><i class="fas fa-cog account-settings-icon"></i></a>
+    <div class="left-container shrink-in-amongus">
+        <!-- <a href="account.php" style="position: absolute;top: 8px;left: 4px;z-index: 10;padding: 14px 14px 14px 2px;backdrop-filter: blur(5px);border-radius: 8px;background: rgba(255,255,255,0.1);" title="Edit Profile"><i class="fas fa-cog account-settings-icon"></i></a> -->
         <div class="user-info-box">
             <div class="image-black-cover"></div>
             <div class="user-infos">
@@ -125,5 +125,5 @@
         </script>
 
     </div>
-    <div class="right-container">
+    <div class="right-container expand-in-amongus">
 

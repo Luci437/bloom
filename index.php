@@ -1,23 +1,27 @@
-
 <?php 
     include('mainTop.php');
 ?>
 <div class="no-group-container">
-            <script type="text/javascript">
-                        function getCode() {
-                            navigator.clipboard.readText()
-                            .then(text => {
-                                $('#group-gen-code').val(text);
-                            })
-                            .catch(err => {
-                                console.error('Failed to read clipboard contents: ', err);
-                            });
-                        }
-            </script>
-            <!-- <img src="images/no-group.png" alt="no-group" class="no-group-img"> -->
-            <div class="black-cover"></div>
+    <style>
+    .active-home {
+        color: #fff;
+    }
+    </style>
+    <script type="text/javascript">
+    function getCode() {
+        navigator.clipboard.readText()
+            .then(text => {
+                $('#group-gen-code').val(text);
+            })
+            .catch(err => {
+                console.error('Failed to read clipboard contents: ', err);
+            });
+    }
+    </script>
+    <!-- <img src="images/no-group.png" alt="no-group" class="no-group-img"> -->
+    <div class="black-cover"></div>
 
-            <?php 
+    <?php 
 
                 if(isset($_GET['link'])) {
                     if($_GET['link'] == 'showJoinBox') {
@@ -86,7 +90,7 @@
                 }
 
             ?>
-        </div>
+</div>
 
 <?php
     include "mainBottom.php";
