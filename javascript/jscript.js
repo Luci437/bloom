@@ -55,7 +55,7 @@ $('#newPassword').on('change', function() {
         $('#pass-error-box').append('<span class="each-warn-message" style="color: rgba(132, 253, 148, 0.651);"><i class="fas fa-check-circle pdspace"></i> All clear</span>');
     }
     
-    
-    
 });
+
+
 

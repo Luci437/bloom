@@ -1944,6 +1944,8 @@ body::-webkit-scrollbar {
     flex-wrap: wrap;
     gap: 16px;
     border-radius: 8px;
+    perspective: 900px;
+    transform-origin: center center;
 }
 .pb1 {
     position: relative;
@@ -1952,6 +1954,9 @@ body::-webkit-scrollbar {
     background: linear-gradient(white,rgb(238, 238, 238));
     overflow: hidden;
     border-radius: 8px 8px 0 8px;
+    backface-visibility: hidden;
+    transition: all 0.3s ease-in-out;
+    /* transform: rotateY(180deg); */
 }
 .pb1:hover .all-settings-box {
     opacity: 1;
@@ -2008,10 +2013,14 @@ body::-webkit-scrollbar {
     background: rgb(29, 29, 29);
 }
 .player-score {
-    color: #fff;
+    color: rgba(255, 255, 255, 0.055);
     transform: skew(40deg);
     font-family: 'Dreamscape Sans';
     font-size: 12px;
+    transition: 0.2s ease-out;
+}
+.pb1:hover .player-score {
+    color: rgba(255, 255, 255, 1);
 }
 .selected-player-name {
     font-weight: bold;
@@ -2039,7 +2048,7 @@ body::-webkit-scrollbar {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    z-index: 10;
+    z-index: 60;
     opacity: 0;
     backdrop-filter: blur(5px);
     transition: 0.2s ease-out;
@@ -2052,6 +2061,7 @@ body::-webkit-scrollbar {
     padding: 16px;
     justify-content: center;
     gap: 4px;
+    z-index: 51;
 }
 .color-cir {
     width: 15px;
@@ -2263,4 +2273,53 @@ body::-webkit-scrollbar {
     bottom: 8px;
     color: rgba(255, 255, 255, 0.11);
     font-weight: bold;
+}
+.reveal-scores {
+    position: absolute;
+    bottom: 0;
+    width: 65px;
+    height: 10px;
+    background: linear-gradient(45deg,rgb(41, 41, 212),rgb(69, 165, 255),rgb(41, 41, 212));
+    box-shadow: 0 10px 100px rgba(0, 0, 255, 0.034);
+    bottom: 4px; right: 12px;
+    z-index: 100;
+    transform: skew(-45deg);
+    cursor: help;
+}
+.try-button {
+    position: absolute;
+    bottom: 8px;
+    right: 170px;
+    font-weight: bold;
+    background: linear-gradient(45deg,#444444,#1f1f1f);
+    padding: 16px 34px;
+    color: rgb(238, 238, 238);
+    z-index: 25;
+    border-radius: 5px 5px 0 0;
+}
+.try-button:before {
+    position: absolute;
+    content: '';
+    right: -10px;
+    bottom: 0;
+    width: 80px;
+    height: 8px;
+    background: #DFE1E1;
+    z-index: 26;
+    transform: skew(-40deg);
+}
+.try-button:after {
+    position: absolute;
+    content: '';
+    top: 3px;
+    left: 2px;
+    width: 5px;
+    height: 89%;
+    border-radius: 20px;
+    background: #DFE1E1;
+    z-index: 26;
+}
+.try-button:hover:after {
+    background: linear-gradient(rgb(255, 113, 113),red);
+    box-shadow: 0 0 10px red; 
 }

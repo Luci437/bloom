@@ -30,6 +30,8 @@
                 while($row = mysqli_fetch_assoc($result)) {
                     echo '
                     <a href="includes/endgame.inc.php" class="endgame-button">END GAME</a>
+                    <a href="lucky.php" class="try-button">TRY LUCK</a>
+                    <div class="reveal-scores" onclick="showScore()"></div>
                     <div class="pb1">
                     <div class="pb11">
                         <img src="images/'.$row['player_color'].'.png" class="selected-player-image" alt="">
@@ -80,7 +82,7 @@
     <div class="all-player-box" id="all-player-panel">
         <?php
         require "includes/dh.inc.php";
-        $sql = "SELECT * FROM available_players";
+        $sql = "SELECT * FROM available_players;";
         $result = mysqli_query($conn, $sql);
         while($row = mysqli_fetch_assoc($result)) {
             echo '<div class="each-player-box">
@@ -218,6 +220,32 @@ function updatePanel() {
             $('#all-player-panel').html(dataResult);
         }
     });
+}
+
+let bulb = 0;
+function showScore() {
+
+
+    let mainBoxs = document.getElementsByClassName("pb1");
+    let playerScores = document.getElementsByClassName("player-score");
+
+    if(bulb % 2 == 0) {
+        $('.player-score').css("color","white");
+        for(let i=0;i<playerScores.length;i++) {
+            mainBoxs[i].style.transform = "Scale(1.1)";
+            $(".reveal-scores").css("background","linear-gradient(45deg,rgb(72, 201, 39),rgb(163, 255, 171),rgb(72, 201, 39))");
+        }
+    }else {
+        $('.player-score').css("color","rgba(255,255,255,0.05)");
+        for(let i=0;i<playerScores.length;i++) {
+            mainBoxs[i].style.transform = "Scale(1)";
+            $(".reveal-scores").css("background","linear-gradient(45deg,rgb(41, 41, 212),rgb(69, 165, 255),rgb(41, 41, 212))");
+        }
+    }
+    bulb++;
+
+
+    
 }
 
 </script>
