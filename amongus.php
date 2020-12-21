@@ -135,6 +135,7 @@
 </script>
 <script src= "https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"> </script>
 <script>
+
 function takeScreenshot() {
     let div = document.getElementById('winnerScreenshot'); 
     html2canvas(div).then( 
@@ -210,6 +211,11 @@ function setScore(el) {
             updatePanel();
         }
     });
+
+    $(".player-score").css("color","rgba(255, 255, 255, 1)");
+    setTimeout(() => {
+        $(".player-score").css("color","rgba(255, 255, 255, 0.055)");
+    }, 5000);
 }
 
 function updatePanel() {

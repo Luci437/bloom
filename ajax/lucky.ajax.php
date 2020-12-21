@@ -34,16 +34,8 @@
             $topScore = $result['mx'];
 
             if($isHe != $himid) {
-                $sql = "SELECT scores FROM available_players WHERE id='$himid';";
-                $result = mysqli_fetch_assoc(mysqli_query($conn, $sql));
-                $thatScore = $result['scores'];
-
                 $topScore++;
-
                 $sql = "UPDATE available_players SET scores = '$topScore' WHERE id='$himid';";
-                mysqli_query($conn, $sql);
-
-                $sql = "UPDATE available_players SET scores='$thatScore' WHERE id='$isHe';";
                 mysqli_query($conn, $sql);
             }
 
