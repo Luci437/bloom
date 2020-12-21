@@ -33,6 +33,7 @@
             $isHe = $result['id'];
             $topScore = $result['mx'];
 
+            //this was the area that caused error
             if($isHe != $himid) {
                 $topScore++;
                 $sql = "UPDATE available_players SET scores = '$topScore' WHERE id='$himid';";
