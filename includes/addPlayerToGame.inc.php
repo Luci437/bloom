@@ -93,12 +93,17 @@
                 mysqli_query($conn, $sql);
             }
         }
+            echo '
+            <img src="images/snow1.png" class="snows snow1">
+            <img src="images/snow2.png" class="snows snow2">
+            <img src="images/snow3.png" class="snows snow3">
+            ';
             $sql = "SELECT ap.player_name,ap.scores,ap.id,ap.player_color FROM available_players ap, addedgame ag WHERE ag.game_id = '$gameId' AND ag.player_id = ap.id";
             $result = mysqli_query($conn, $sql);
             while($row = mysqli_fetch_assoc($result)) {
                 echo '
-                <a href="includes/endgame.inc.php" class="endgame-button">END GAME</a>
-                <a href="lucky.php" class="try-button">TRY LUCK</a>
+                <a href="includes/endgame.inc.php" class="endgame-button"><img src="images/snow4.png" class="snows snow4">END GAME</a>
+                <a href="lucky.php" class="try-button"><img src="images/snow5.png" class="snows snow5">TRY LUCK</a>
                 <div class="reveal-scores" onclick="showScore()"></div>
                 <div class="pb1">
                 <div class="pb11">
