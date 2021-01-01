@@ -23,8 +23,10 @@
     ?>
     <div class="game-main-container" id="addedPlayer">
         <img src="images/snow1.png" class="snows snow1">
-        <img src="images/snow2.png" class="snows snow2">
         <img src="images/snow3.png" class="snows snow3">
+        <div class="side-button-box">
+            <div onclick="showScore()" class="side-show-button"></div>
+        </div>
         <?php
             if(isset($_SESSION['newGame'])) {
                 $gameId = $_SESSION['newGame'];
@@ -33,7 +35,7 @@
                 while($row = mysqli_fetch_assoc($result)) {
                     echo '
                     <a href="includes/endgame.inc.php" class="endgame-button"><img src="images/snow4.png" class="snows snow4"> END GAME</a>
-                    <a href="lucky.php" class="try-button"><img src="images/snow5.png" class="snows snow5"> TRY LUCK</a>
+                    <a href="lucky.php" class="try-button"><img src="images/snow5.png" class="snows snow5"> FIND MVP</a>
                     <div class="reveal-scores" onclick="showScore()"></div>
                     <div class="pb1">
                     <div class="pb11">
@@ -242,14 +244,14 @@ function showScore() {
         $('.player-score').css("color","white");
         for(let i=0;i<playerScores.length;i++) {
             mainBoxs[i].style.transform = "Scale(1.1)";
-            $(".reveal-scores").css("background","linear-gradient(45deg,rgb(72, 201, 39),rgb(163, 255, 171),rgb(72, 201, 39))");
         }
+        $('.side-show-button').css({"top":"calc(100% - 24px)","transform":"rotate(90deg)","filter":"grayscale(0)"});
     }else {
         $('.player-score').css("color","rgba(255,255,255,0.05)");
         for(let i=0;i<playerScores.length;i++) {
             mainBoxs[i].style.transform = "Scale(1)";
-            $(".reveal-scores").css("background","linear-gradient(45deg,rgb(41, 41, 212),rgb(69, 165, 255),rgb(41, 41, 212))");
         }
+        $('.side-show-button').css({"top":"0","transform":"rotate(0deg)","filter":"grayscale(10)"});
     }
     bulb++;
 

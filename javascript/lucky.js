@@ -9,6 +9,8 @@ function findLucky() {
 
     let currentplayer = 0;
 
+    $('.box1-start-button').hide();
+
     $('.waiting-box').css("display","flex");
     let findLuckyTimer = setInterval(() => {
         for(let i=0;i<totalPlayer;i++) {
@@ -64,14 +66,15 @@ function getCard() {
 }
 
 function findTask() {
-    let taskHeading = ['Winner','Exchange','Boost 10','Loss 10'];
-    let taskDescription = ['You win the game','You exchange your point with ','You get 10 more points','Your 10 points is deducted'];
+    let taskHeading = ['Exchange','Boost 10','Loss 10','MVP'];
+    let taskDescription = ['You exchange your point with ','You get 10 more points','Your 10 points is deducted','OUR VAZHA PLAYER'];
     let playerName = document.getElementsByClassName('available-playerName');
     let totalPlayer = playerName.length;
     let totalTask = taskHeading.length;
     let allPlayerId = document.getElementsByClassName('player-id');
 
     let randomTask = Math.floor(Math.random() * totalTask);
+    console.log(randomTask);
     let selectedTask = taskHeading[randomTask];
 
     if(selectedTask == 'Exchange') {
@@ -142,6 +145,22 @@ function findTask() {
             data: {
                 gainUserId: luckyPlayerId,
                 mode: 'loss_10'
+            },
+            success: function(dataResult) {
+                console.log(dataResult);
+            }
+        });
+
+        $('.header-title').html(taskHeading[randomTask]);
+        $('.header-text').html(taskDescription[randomTask]);
+    }else if(selectedTask == 'MVP') {
+        console.log("MVP");
+        $.ajax({
+            url: 'ajax/lucky.ajax.php',
+            type: 'POST',
+            data: {
+                mvpid: luckyPlayerId,
+                mode: 'mvp'
             },
             success: function(dataResult) {
                 console.log(dataResult);

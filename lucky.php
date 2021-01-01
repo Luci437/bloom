@@ -29,13 +29,18 @@
                 $gameId = $_SESSION['newGame'];
                 $sql = "SELECT ap.player_name,ap.scores,ap.id FROM available_players ap, addedgame ag WHERE ag.game_id='$gameId' AND ag.player_id=ap.id ORDER BY ap.scores DESC;";
                 $result = mysqli_query($conn, $sql);
+                $firstPlayer = 0;
                 while($row = mysqli_fetch_assoc($result)) {
-                    echo '
-                    <div class="box1-player-box">
-                        <h4 class="box1-player-name"><i class="fas fa-user-astronaut pdspace"></i><span class="available-playerName">'.$row['player_name'].'<span></h4>
-                        <input type="hidden" class="player-id" value="'.$row["id"].'">
-                    </div>    
-                    ';
+                    if($firstPlayer > 0) {
+                        echo '
+                        <div class="box1-player-box">
+                            <h4 class="box1-player-name"><i class="fas fa-user-astronaut pdspace"></i><span class="available-playerName">'.$row['player_name'].'<span></h4>
+                            <input type="hidden" class="player-id" value="'.$row["id"].'">
+                        </div>    
+                        ';
+                    }
+                    $firstPlayer++;
+
                 }
             ?>
             <div class="waiting-box">
@@ -48,7 +53,8 @@
                     class="confirmation-answer">do you want to continue?</span></h4>
             <div class="box2-button-box">
                 <button class="confirmation-button confirm-yes" onclick="getCard()">Yes</button>
-                <button class="confirmation-button" onclick="(function(){ window.location = 'amongus.php'; })">Nah</button>
+                <!-- <button class="confirmation-button" onclick="(function(){ window.location = 'amongus.php'; })">Nah</button> -->
+                <a href="amongus.php" style="font-size: 12px;" class="confirmation-button">Nah</a>
             </div>
         </div>
 

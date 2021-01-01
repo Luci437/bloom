@@ -2,7 +2,7 @@
     require "dh.inc.php";
     session_start();
 
-    $sql = "SELECT player_name,id,scores FROM available_players WHERE scores in (SELECT MAX(scores) FROM available_players)";
+    $sql = "SELECT player_name,id,scores FROM available_players WHERE scores in (SELECT MIN(scores) FROM available_players)";
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_assoc($result);
     $gamerName = $row['player_name'];
@@ -10,7 +10,6 @@
     $gameId = $_SESSION['newGame'];
     $score = $row['scores'];
 
-    if($score != 0) {
         $sql = "INSERT INTO mvp(player_id,player_score,game_id) VALUES('$playerId','$score','$gameId');";
         mysqli_query($conn, $sql);
 
@@ -24,7 +23,6 @@
 
         header("Location: ../amongus.php?gamerName=$gamerName");
         exit();
-    }
 
     mysqli_query($conn, "DELETE FROM newgame WHERE id='$gameId';");
     header("Location: ../amongus.php?nogamewin");
