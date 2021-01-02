@@ -1,6 +1,7 @@
 <?php
     include "maintop.php";
 ?>
+<div id="snow-box"></div>
 <div class="among-us-container">
     <style>
         .shrink-in-amongus {
@@ -35,7 +36,7 @@
                 while($row = mysqli_fetch_assoc($result)) {
                     echo '
                     <a href="includes/endgame.inc.php" class="endgame-button"><img src="images/snow4.png" class="snows snow4"> END GAME</a>
-                    <a href="lucky.php" class="try-button"><img src="images/snow5.png" class="snows snow5"> FIND MVP</a>
+                    <a href="lucky.php" class="try-button"> FIND MVP</a>
                     <div class="reveal-scores" onclick="showScore()"></div>
                     <div class="pb1">
                     <div class="pb11">
@@ -113,11 +114,19 @@
 <?php
     if(isset($_GET['gamerName'])) {
         $gamerName = $_GET['gamerName'];
+        $winnerName = $_GET['winner'];
+        $wid = $_GET['id'];
         echo '
         <div class="endgame-screen" id="winnerScreenshot">
+            <div class="mvp-box">
+            <h1 class="game-winner-name">'.$winnerName.'</h1>
+            </div>
+            <div class="winner-box">
+            <input type="hidden" id="mvpid" value="'.$wid.'">
             <a href="includes/closeGame.inc.php" style="color: #fff;position: absolute;top: 12px;right: 12px;font-size: 24px;"><i class="fas fa-times"></i></a>
-            <h1 class="game-winner-name">'.$gamerName.'</h1>
-            <div id="barcode-box"></div>
+            <h1 class="game-winner-name vazhaplayer">'.$gamerName.'</h1>
+            </div>
+            
             <button class="screenshot-button" onclick="takeScreenshot();"><i class="fas fa-camera pdspace"></i> SCREENSHOT</button>
             <div id="output"></div>
         </div>
@@ -137,6 +146,24 @@
 <script>
     let d = new Date();
     $('#barcode-box').html(d.getDay()+'.'+d.getMonth()+'.'+d.getYear()+'.'+d.getMinutes()+'.'+d.getHours());
+    let mid = $("#mvpid").val();
+    console.log(mid);
+    if(mid == 4) {
+        $(".winner-box").css({"background":"url('images/thambi.png')","background-size":"cover"});
+    }else if(mid == 3) {
+        $(".winner-box").css({"background":"url('images/9kumar.png')","background-size":"cover"});
+    }else if(mid == 6) {
+        $(".winner-box").css({"background":"url('images/stony.png')","background-size":"cover"});
+    }else if(mid == 9) {
+        $(".winner-box").css({"background":"url('images/killer.png')","background-size":"cover"});
+    }else if(mid == 8) {
+        $(".winner-box").css({"background":"url('images/renizvazha.png')","background-size":"cover"});
+    }else if(mid == 5) {
+        $(".winner-box").css({"background":"url('images/alex1.png')","background-size":"cover"});
+    }else if(mid == 2) {
+        $(".winner-box").css({"background":"url('images/don.jpg')","background-size":"cover"});
+    }
+
 </script>
 <script src= "https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"> </script>
 <script>
@@ -233,7 +260,7 @@ function updatePanel() {
     });
 }
 
-let bulb = 0;
+let bulb = 2;
 function showScore() {
 
 

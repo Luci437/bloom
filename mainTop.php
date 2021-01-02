@@ -19,8 +19,8 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <div class="snowfalls"></div>
-    <div class="snowfalls2"></div>
+    <!-- <div class="snowfalls"></div>
+    <div class="snowfalls2"></div> -->
     <div class="logout-anim-box">
         <h3 class="logout-heading">Logging out <span><img src="images/ld.svg" class="logout-anim"></span></h3>
         <h5 class="logout-log">/junk/caches</h5>

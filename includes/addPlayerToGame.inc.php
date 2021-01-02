@@ -105,7 +105,7 @@
             while($row = mysqli_fetch_assoc($result)) {
                 echo '
                 <a href="includes/endgame.inc.php" class="endgame-button"><img src="images/snow4.png" class="snows snow4">END GAME</a>
-                <a href="lucky.php" class="try-button"><img src="images/snow5.png" class="snows snow5">FIND MVP</a>
+                <a href="lucky.php" class="try-button">FIND MVP</a>
                 <div class="reveal-scores" onclick="showScore()"></div>
                 <div class="pb1">
                 <div class="pb11">
