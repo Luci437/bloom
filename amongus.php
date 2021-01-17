@@ -36,7 +36,14 @@
                 while($row = mysqli_fetch_assoc($result)) {
                     echo '
                     <a href="includes/endgame.inc.php" class="endgame-button"><img src="images/snow4.png" class="snows snow4"> END GAME</a>
-                    <a href="lucky.php" class="try-button"> FIND MVP</a>
+                    ';
+                    $nomSql = "SELECT nom FROM newgame WHERE id='$gameId';";
+                    $nomResult = mysqli_fetch_assoc(mysqli_query($conn, $nomSql));
+                    $totalNom = $nomResult['nom'];
+                    if($totalNom > 0) {
+                        echo '<a href="lucky.php" class="try-button"> FIND MVP</a>';
+                    }
+                    echo '
                     <div class="reveal-scores" onclick="showScore()"></div>
                     <div class="pb1">
                     <div class="pb11">
@@ -126,7 +133,9 @@
             <a href="includes/closeGame.inc.php" style="color: #fff;position: absolute;top: 12px;right: 12px;font-size: 24px;"><i class="fas fa-times"></i></a>
             <h1 class="game-winner-name vazhaplayer">'.$gamerName.'</h1>
             </div>
+            <div class="split-bar">
             
+            </div>
             <button class="screenshot-button" onclick="takeScreenshot();"><i class="fas fa-camera pdspace"></i> SCREENSHOT</button>
             <div id="output"></div>
         </div>

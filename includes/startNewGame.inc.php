@@ -6,8 +6,9 @@
         $gameMonth = date('m');
         $gameYear = date('Y');
         $uid = $_SESSION['userid'];
+        $nom = rand(1,10);
 
-        $sql = "INSERT INTO newgame(player_id,game_date_year,game_date_month,game_date_day) VALUES('$uid','$gameYear','$gameMonth','$gameDay');";
+        $sql = "INSERT INTO newgame(player_id,game_date_year,game_date_month,game_date_day,nom) VALUES('$uid','$gameYear','$gameMonth','$gameDay',$nom);";
         mysqli_query($conn, $sql);
         $sql1 = "SELECT MAX(id) as gameId FROM newgame";
         $result = mysqli_query($conn, $sql1);

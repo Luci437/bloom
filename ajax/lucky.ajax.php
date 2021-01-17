@@ -3,6 +3,13 @@
     session_start();
 
     if(isset($_POST['mode'])) {
+        $gameId = $_SESSION['newGame'];
+        $nomSql = "SELECT * FROM newgame WHERE id='$gameId';";
+        $nomResult = mysqli_fetch_assoc(mysqli_query($conn, $nomSql));
+        $totalNom = $nomResult['nom'];
+        $totalNom--;
+        $nomSqlUpdate = "UPDATE newgame SET nom='$totalNom' WHERE id='$gameId';";
+        mysqli_query($conn,$nomSqlUpdate);
         if($_POST['mode'] == 'Exchange') {
             $myid = $_POST['myid'];
             $himid = $_POST['himid'];
@@ -27,7 +34,6 @@
 
         if($_POST['mode'] == 'mvp') {
             $himid = $_POST['mvpid'];
-            $gameId = $_SESSION['newGame'];
             $sql = "SELECT min(ap.scores) as mx, ap.id FROM available_players ap, addedgame ag where ag.game_id = '$gameId' AND ag.player_id = ap.id;";
             $result = mysqli_fetch_assoc(mysqli_query($conn, $sql));
             $topScore = $result['mx'];

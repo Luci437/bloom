@@ -1869,9 +1869,14 @@ body::-webkit-scrollbar {
     left: 0;
     box-sizing: border-box;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     gap: 8px;
 }
+@media only screen and (max-width: 1000px) {
+    .all-player-box {
+        grid-template-columns: repeat(4, 1fr);
+    }
+  }
 .all-player-box::-webkit-scrollbar {
     width: 0px;
     background: transparent;
@@ -1890,7 +1895,8 @@ body::-webkit-scrollbar {
     position: absolute;
     content: '';
     right: -10px;
-    width: 70px;
+    /* width: 70px; */
+    width: 40%;
     height: 40px;
     background: rgb(44, 44, 44);
     transform: skewX(-20deg);
@@ -1902,7 +1908,8 @@ body::-webkit-scrollbar {
     content: '';
     left: -10px;
     top: 0;
-    width: 100px;
+    /* width: 100px; */
+    width: 50%;
     height: 10px;
     background: rgb(39, 39, 39);
     transform: skewX(-40deg);
@@ -2220,6 +2227,7 @@ body::-webkit-scrollbar {
     position: absolute;
     display: grid;
     grid-template-columns: repeat(2,1fr);
+    background: black;
     top: 0;
     left: 0;
     width: 100%;
@@ -2462,6 +2470,7 @@ body::-webkit-scrollbar {
     position: relative;
     width: 100%;
     height: 100%;
+    background: black;
     background: url("../images/mvp.jpg");
     background-size: cover;
     background-position: center;
@@ -2470,6 +2479,7 @@ body::-webkit-scrollbar {
     position: relative;
     width: 100%;
     height: 100%;
+    background: black;
     background: url("../images/amongus.png");
     background-size: cover;
     background-position: center;
@@ -2478,8 +2488,26 @@ body::-webkit-scrollbar {
     position: absolute;
     width: 50px;
     height: 120%;
-    background: linear-gradient(to right,#1F164E,#043D82);
-    left: 50%;
+    left: 48%;
     transform: translateX(-50%);
-    filter: blur(10px);
+    overflow: hidden;
+    border-left: 3px solid rgba(255, 255, 255, 0.055);
+    border-right: 3px solid rgba(255, 255, 255, 0.055);
+    transform: skewX(-4deg);
+    background: black;
+    background: url("../images/wall.png");
+    background-size: cover;
+    background-position: center;
+    background-position-y: -50px;
+    filter: contrast(140%);
+    box-shadow: 0 0 100px 50px rgba(0, 0, 0, 0.719);
+    animation: 3s breathing infinite ease alternate;
+}
+@keyframes breathing {
+    from {
+        box-shadow: 0 0 50px 25px rgba(10, 19, 46, 0.719);
+    }
+    to {
+        box-shadow: 0 0 100px 50px rgba(9, 10, 42, 0.719);
+    }
 }
