@@ -80,6 +80,9 @@
             if($totalMembers <= 9) {
                 $sql = "INSERT INTO addedgame(game_id,player_id) VALUES('$gameId','$playerId');";
                 mysqli_query($conn, $sql);
+
+                $wheelSql = "INSERT INTO wheel(player_id,game_id) VALUES('$playerId','$gameId');";
+                mysqli_query($conn, $wheelSql);
     
                 $findColorSql = "SELECT color FROM available_color WHERE color not in (SELECT ap.player_color FROM available_players ap, newgame ng,addedgame ag WHERE ap.id = ag.player_id AND ng.id = '$gameId' AND ng.id = ag.game_id)";
                 $colorResult = mysqli_fetch_assoc(mysqli_query($conn, $findColorSql));
@@ -91,6 +94,9 @@
             }else {
                 $sql = "DELETE FROM addedgame WHERE game_id='$gameId' AND player_id='$playerId';";
                 mysqli_query($conn, $sql);
+
+                $wheelsql = "DELETE FROM wheel WHERE game_id='$gameId' AND player_id='$playerId';";
+                mysqli_query($conn, $wheelsql);
             }
         }
             echo '

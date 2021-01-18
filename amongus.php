@@ -254,9 +254,9 @@ function setScore(el) {
     });
 
     $(".player-score").css("color","rgba(255, 255, 255, 1)");
-    setTimeout(() => {
-        $(".player-score").css("color","rgba(255, 255, 255, 0.055)");
-    }, 5000);
+    /* setTimeout(() => {
+         $(".player-score").css("color","rgba(255, 255, 255, 0.055)");
+     }, 5000);*/
 }
 
 function updatePanel() {

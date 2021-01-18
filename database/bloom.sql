@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 17, 2020 at 10:31 AM
+-- Generation Time: Jan 18, 2021 at 11:10 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.33
 
@@ -234,7 +234,213 @@ INSERT INTO `addedgame` (`id`, `game_id`, `player_id`) VALUES
 (647, 70, 8),
 (648, 70, 10),
 (649, 70, 9),
-(651, 70, 7);
+(651, 70, 7),
+(652, 71, 3),
+(653, 71, 2),
+(654, 71, 7),
+(655, 71, 8),
+(656, 72, 2),
+(657, 72, 3),
+(658, 72, 4),
+(659, 72, 5),
+(660, 72, 6),
+(661, 73, 2),
+(662, 73, 3),
+(663, 73, 4),
+(664, 73, 5),
+(665, 73, 6),
+(666, 73, 7),
+(667, 73, 8),
+(668, 73, 9),
+(669, 73, 10),
+(670, 73, 12),
+(673, 75, 2),
+(674, 75, 3),
+(675, 75, 4),
+(676, 75, 5),
+(677, 75, 6),
+(678, 75, 7),
+(679, 75, 8),
+(680, 76, 2),
+(681, 76, 3),
+(682, 76, 4),
+(683, 76, 5),
+(684, 76, 6),
+(685, 76, 7),
+(686, 77, 5),
+(687, 77, 4),
+(688, 77, 3),
+(689, 77, 2),
+(696, 84, 6),
+(697, 85, 4),
+(699, 85, 3),
+(700, 85, 2),
+(701, 85, 7),
+(702, 85, 9),
+(703, 85, 8),
+(704, 85, 10),
+(705, 85, 11),
+(706, 85, 6),
+(707, 85, 5),
+(708, 86, 3),
+(709, 87, 6),
+(710, 87, 3),
+(711, 87, 4),
+(712, 88, 4),
+(713, 88, 3),
+(714, 89, 4),
+(715, 89, 5),
+(716, 89, 6),
+(717, 90, 4),
+(718, 90, 5),
+(719, 90, 6),
+(720, 90, 8),
+(721, 90, 2),
+(722, 91, 5),
+(723, 91, 10),
+(724, 91, 4),
+(725, 91, 9),
+(726, 91, 8),
+(727, 91, 3),
+(728, 91, 7),
+(729, 91, 2),
+(730, 91, 11),
+(731, 91, 6),
+(732, 92, 4),
+(733, 92, 9),
+(734, 92, 3),
+(735, 92, 8),
+(736, 92, 5),
+(737, 92, 10),
+(738, 93, 4),
+(739, 93, 9),
+(740, 93, 10),
+(741, 93, 5),
+(742, 94, 2),
+(743, 94, 8),
+(744, 94, 9),
+(745, 94, 4),
+(746, 94, 3),
+(747, 95, 10),
+(748, 95, 4),
+(749, 95, 5),
+(762, 96, 2),
+(763, 96, 3),
+(764, 96, 6),
+(765, 97, 2),
+(766, 97, 3),
+(767, 97, 5),
+(768, 97, 6),
+(770, 98, 9),
+(771, 98, 8),
+(772, 98, 3),
+(773, 98, 2),
+(774, 98, 7),
+(775, 99, 3),
+(776, 99, 8),
+(777, 99, 9),
+(778, 99, 5),
+(781, 100, 2),
+(782, 100, 3),
+(783, 100, 5),
+(784, 101, 4),
+(785, 101, 3),
+(786, 101, 2),
+(787, 101, 7),
+(788, 102, 3),
+(789, 102, 8),
+(790, 102, 9),
+(791, 102, 5),
+(792, 102, 10),
+(793, 102, 2),
+(794, 102, 7),
+(795, 103, 3),
+(796, 103, 8),
+(797, 103, 9),
+(798, 103, 4),
+(799, 103, 10),
+(800, 104, 3),
+(801, 104, 8),
+(802, 104, 7),
+(803, 104, 2),
+(804, 105, 4),
+(805, 105, 8),
+(806, 105, 3),
+(807, 106, 2),
+(808, 106, 3),
+(809, 107, 2),
+(810, 107, 3),
+(811, 108, 2),
+(812, 108, 3),
+(813, 109, 2),
+(814, 109, 3),
+(815, 109, 5),
+(816, 109, 7),
+(817, 109, 8),
+(818, 109, 9),
+(819, 110, 2),
+(820, 110, 3),
+(821, 111, 3),
+(822, 111, 4),
+(823, 111, 9),
+(824, 112, 4),
+(825, 112, 3),
+(826, 112, 5),
+(827, 112, 6),
+(828, 113, 3),
+(830, 113, 6),
+(831, 113, 2),
+(832, 113, 4),
+(833, 114, 3),
+(834, 114, 4),
+(835, 115, 4),
+(836, 115, 6),
+(837, 116, 4),
+(838, 116, 9),
+(839, 117, 4),
+(840, 117, 8),
+(841, 118, 4),
+(842, 118, 3),
+(843, 119, 4),
+(844, 119, 3),
+(845, 120, 5),
+(846, 120, 2),
+(847, 121, 4),
+(848, 121, 3),
+(849, 121, 9),
+(850, 121, 10),
+(851, 121, 5),
+(852, 122, 5),
+(853, 122, 10),
+(854, 122, 4),
+(855, 123, 4),
+(856, 123, 3),
+(857, 124, 3),
+(859, 124, 2),
+(860, 125, 11),
+(861, 125, 10),
+(862, 125, 9),
+(863, 126, 4),
+(864, 126, 3),
+(865, 127, 2),
+(866, 127, 3),
+(867, 127, 9),
+(868, 128, 2),
+(869, 128, 3),
+(870, 128, 4),
+(871, 128, 5),
+(872, 129, 4),
+(873, 129, 10),
+(874, 129, 5),
+(875, 130, 2),
+(876, 130, 2),
+(877, 130, 3),
+(878, 130, 3),
+(879, 131, 4),
+(880, 132, 4),
+(881, 132, 5),
+(882, 132, 3),
+(883, 132, 2);
 
 -- --------------------------------------------------------
 
@@ -282,17 +488,17 @@ CREATE TABLE `available_players` (
 --
 
 INSERT INTO `available_players` (`id`, `player_name`, `player_color`, `scores`) VALUES
-(2, 'dN', 'black', 0),
-(3, '9 kumar', 'pink', 0),
-(4, 'Thambi', 'lime', 0),
-(5, 'kl05ar4921', 'blue', 0),
-(6, 'stony', 'white', 0),
+(2, 'dN', 'blue', 10),
+(3, '9 kumar', 'yellow', 7),
+(4, 'Thambi', 'red', 27),
+(5, 'blackbeast', 'green', 9),
+(6, 'stony', 'red', 0),
 (7, 'alfee', 'blue', 0),
 (8, 'renizvazha', 'red', 0),
-(9, 'killerbean', 'green', 0),
-(10, 'luci', 'yellow', 0),
-(11, 'that guy', 'black', 0),
-(12, 'Melbin', 'green', 0),
+(9, 'killerbean', 'yellow', 0),
+(10, 'luci', 'green', 0),
+(11, 'that guy', 'red', 0),
+(12, 'Melbin', 'blue', 0),
 (13, 'manakunanjan', 'red', 0);
 
 -- --------------------------------------------------------
@@ -355,7 +561,10 @@ CREATE TABLE `groups` (
 INSERT INTO `groups` (`id`, `user_id`, `group_name`, `group_type`, `group_gen_id`) VALUES
 (36, 37, 'Ashbin\'s Group', 'Private', '1LR7O'),
 (76, 45, 'Mca 2020', 'Private', 'BXEQO'),
-(77, 42, 'This is a test guys', 'Public', '7COSN');
+(77, 42, 'This is a test guys', 'Public', '7COSN'),
+(78, 18, 'Marian', 'Public', 'RQY9K'),
+(80, 16, 'Review 2020', 'Private', 'NCPKT'),
+(82, 47, 'Review2020', 'Public', '4GM8H');
 
 -- --------------------------------------------------------
 
@@ -381,7 +590,22 @@ INSERT INTO `joinedgroup` (`id`, `group_id`, `user_id`) VALUES
 (355, 77, 37),
 (356, 77, 22),
 (357, 77, 20),
-(358, 77, 29);
+(358, 77, 29),
+(361, 78, 18),
+(363, 78, 19),
+(364, 78, 25),
+(365, 78, 28),
+(366, 78, 29),
+(367, 78, 37),
+(368, 78, 22),
+(369, 78, 26),
+(370, 78, 42),
+(372, 80, 16),
+(373, 80, 20),
+(374, 80, 29),
+(375, 80, 26),
+(376, 80, 22),
+(385, 82, 47);
 
 -- --------------------------------------------------------
 
@@ -417,7 +641,58 @@ INSERT INTO `mvp` (`id`, `player_id`, `player_score`, `game_id`) VALUES
 (32, 9, 13, 62),
 (33, 6, 11, 63),
 (34, 4, 22, 64),
-(35, 4, 18, 70);
+(35, 4, 18, 70),
+(36, 3, 55, 72),
+(37, 3, 15, 77),
+(38, 2, 1, 84),
+(39, 6, 15, 85),
+(40, 3, 10, 86),
+(41, 4, 15, 87),
+(42, 5, 10, 89),
+(43, 2, 0, 90),
+(44, 12, 0, 91),
+(45, 3, -1, 94),
+(46, 2, 0, 95),
+(47, 4, 0, 96),
+(55, 9, 0, 98),
+(56, 3, -3, 99),
+(57, 5, 3, 100),
+(58, 7, 0, 101),
+(59, 7, 0, 101),
+(60, 8, 1, 102),
+(61, 2, 0, 102),
+(62, 9, 0, 103),
+(63, 2, 1, 104),
+(64, 3, 0, 104),
+(65, 8, 0, 105),
+(66, 2, 0, 106),
+(67, 2, 0, 107),
+(68, 2, 0, 108),
+(69, 2, 0, 109),
+(70, 2, 0, 110),
+(71, 9, 0, 111),
+(72, 4, 1, 111),
+(73, 4, 0, 112),
+(74, 4, 0, 113),
+(75, 3, 0, 114),
+(76, 6, 0, 115),
+(77, 9, 0, 116),
+(78, 8, 0, 117),
+(79, 3, 0, 118),
+(80, 3, 0, 119),
+(81, 2, 0, 120),
+(82, 4, 0, 121),
+(83, 5, 0, 122),
+(84, 10, 0, 122),
+(85, 3, 0, 123),
+(86, 2, 0, 124),
+(87, 11, 0, 125),
+(88, 4, -1, 126),
+(89, 2, 0, 127),
+(90, 4, 5, 128),
+(91, 4, -1, 129),
+(92, 2, 0, 130),
+(93, 4, 0, 131);
 
 -- --------------------------------------------------------
 
@@ -475,7 +750,13 @@ INSERT INTO `myfriends` (`id`, `user_id`, `friend_id`) VALUES
 (59, 43, 19),
 (60, 43, 18),
 (61, 42, 29),
-(62, 20, 16);
+(62, 20, 16),
+(63, 46, 29),
+(64, 46, 22),
+(65, 46, 26),
+(66, 46, 16),
+(68, 16, 47),
+(69, 47, 16);
 
 -- --------------------------------------------------------
 
@@ -488,43 +769,100 @@ CREATE TABLE `newgame` (
   `player_id` int(11) NOT NULL,
   `game_date_year` int(4) NOT NULL,
   `game_date_month` int(2) NOT NULL,
-  `game_date_day` int(2) NOT NULL
+  `game_date_day` int(2) NOT NULL,
+  `nom` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `newgame`
 --
 
-INSERT INTO `newgame` (`id`, `player_id`, `game_date_year`, `game_date_month`, `game_date_day`) VALUES
-(32, 16, 2020, 11, 25),
-(34, 16, 2020, 11, 26),
-(39, 16, 2020, 11, 26),
-(40, 16, 2020, 11, 26),
-(41, 16, 2020, 11, 27),
-(42, 16, 2020, 11, 27),
-(43, 16, 2020, 11, 27),
-(44, 16, 2020, 11, 28),
-(45, 16, 2020, 12, 3),
-(48, 16, 2020, 12, 4),
-(50, 16, 2020, 12, 11),
-(51, 16, 2020, 12, 12),
-(52, 16, 2020, 12, 12),
-(53, 16, 2020, 12, 12),
-(54, 16, 2020, 12, 12),
-(55, 16, 2020, 12, 12),
-(56, 16, 2020, 12, 12),
-(58, 16, 2020, 12, 12),
-(59, 16, 2020, 12, 13),
-(60, 16, 2020, 12, 13),
-(61, 16, 2020, 12, 13),
-(62, 16, 2020, 12, 13),
-(63, 16, 2020, 12, 15),
-(64, 16, 2020, 12, 15),
-(65, 16, 2020, 12, 16),
-(66, 16, 2020, 12, 16),
-(67, 16, 2020, 12, 16),
-(69, 16, 2020, 12, 16),
-(70, 16, 2020, 12, 16);
+INSERT INTO `newgame` (`id`, `player_id`, `game_date_year`, `game_date_month`, `game_date_day`, `nom`) VALUES
+(32, 16, 2020, 11, 25, 0),
+(34, 16, 2020, 11, 26, 0),
+(39, 16, 2020, 11, 26, 0),
+(40, 16, 2020, 11, 26, 0),
+(41, 16, 2020, 11, 27, 0),
+(42, 16, 2020, 11, 27, 0),
+(43, 16, 2020, 11, 27, 0),
+(44, 16, 2020, 11, 28, 0),
+(45, 16, 2020, 12, 3, 0),
+(48, 16, 2020, 12, 4, 0),
+(50, 16, 2020, 12, 11, 0),
+(51, 16, 2020, 12, 12, 0),
+(52, 16, 2020, 12, 12, 0),
+(53, 16, 2020, 12, 12, 0),
+(54, 16, 2020, 12, 12, 0),
+(55, 16, 2020, 12, 12, 0),
+(56, 16, 2020, 12, 12, 0),
+(58, 16, 2020, 12, 12, 0),
+(59, 16, 2020, 12, 13, 0),
+(60, 16, 2020, 12, 13, 0),
+(61, 16, 2020, 12, 13, 0),
+(62, 16, 2020, 12, 13, 0),
+(63, 16, 2020, 12, 15, 0),
+(64, 16, 2020, 12, 15, 0),
+(65, 16, 2020, 12, 16, 0),
+(66, 16, 2020, 12, 16, 0),
+(67, 16, 2020, 12, 16, 0),
+(69, 16, 2020, 12, 16, 0),
+(70, 16, 2020, 12, 16, 0),
+(71, 16, 2020, 12, 18, 0),
+(72, 16, 2020, 12, 21, 0),
+(73, 16, 2020, 12, 21, 0),
+(74, 16, 2020, 12, 23, 0),
+(75, 16, 2020, 12, 29, 0),
+(76, 16, 2020, 12, 29, 0),
+(77, 16, 2020, 12, 29, 0),
+(84, 16, 2020, 12, 29, 0),
+(85, 16, 2020, 12, 29, 0),
+(86, 16, 2020, 12, 29, 0),
+(87, 16, 2020, 12, 29, 0),
+(88, 16, 2021, 1, 1, 0),
+(89, 16, 2021, 1, 1, 0),
+(90, 16, 2021, 1, 1, 0),
+(91, 16, 2021, 1, 1, 0),
+(92, 16, 2021, 1, 1, 0),
+(93, 16, 2021, 1, 1, 0),
+(94, 16, 2021, 1, 1, 0),
+(95, 16, 2021, 1, 1, 0),
+(96, 16, 2021, 1, 1, 0),
+(97, 16, 2021, 1, 1, 0),
+(98, 16, 2021, 1, 1, 0),
+(99, 16, 2021, 1, 1, 0),
+(100, 16, 2021, 1, 1, 0),
+(101, 16, 2021, 1, 1, 0),
+(102, 16, 2021, 1, 2, 0),
+(103, 16, 2021, 1, 2, 0),
+(104, 16, 2021, 1, 2, 0),
+(105, 16, 2021, 1, 2, 0),
+(106, 16, 2021, 1, 2, 0),
+(107, 16, 2021, 1, 2, 0),
+(108, 16, 2021, 1, 2, 0),
+(109, 16, 2021, 1, 2, 0),
+(110, 16, 2021, 1, 2, 0),
+(111, 16, 2021, 1, 2, 0),
+(112, 16, 2021, 1, 2, 0),
+(113, 16, 2021, 1, 2, 0),
+(114, 16, 2021, 1, 2, 0),
+(115, 16, 2021, 1, 2, 0),
+(116, 16, 2021, 1, 2, 0),
+(117, 16, 2021, 1, 2, 0),
+(118, 16, 2021, 1, 2, 0),
+(119, 16, 2021, 1, 2, 0),
+(120, 16, 2021, 1, 2, 0),
+(121, 16, 2021, 1, 3, 0),
+(122, 16, 2021, 1, 3, 0),
+(123, 16, 2021, 1, 3, 0),
+(124, 16, 2021, 1, 3, 0),
+(125, 16, 2021, 1, 3, 0),
+(126, 16, 2021, 1, 3, 0),
+(127, 16, 2021, 1, 16, 0),
+(128, 16, 2021, 1, 17, 0),
+(129, 16, 2021, 1, 17, 0),
+(130, 16, 2021, 1, 18, 10),
+(131, 16, 2021, 1, 18, 6),
+(132, 16, 2021, 1, 18, 5);
 
 -- --------------------------------------------------------
 
@@ -577,7 +915,15 @@ INSERT INTO `notifications` (`id`, `user_id`, `notification`, `noti_status`) VAL
 (451, 20, 'Mca was deleted.', 1),
 (452, 18, 'Chumma was deleted.', 1),
 (453, 28, 'Chumma was deleted.', 0),
-(454, 22, 'Chumma was deleted.', 0);
+(454, 22, 'Chumma was deleted.', 0),
+(455, 46, 'My Group was deleted.', 1),
+(456, 16, 'You were kicked from Test V1', 1),
+(457, 46, 'Test V1 was deleted.', 1),
+(458, 26, 'Test V1 was deleted.', 0),
+(459, 29, 'Test V1 was deleted.', 0),
+(460, 16, 'Test V1 was deleted.', 1),
+(461, 22, 'Test V1 was deleted.', 0),
+(462, 16, 'You were kicked from Review2020', 1);
 
 -- --------------------------------------------------------
 
@@ -598,7 +944,9 @@ CREATE TABLE `reviews` (
 --
 
 INSERT INTO `reviews` (`id`, `group_id`, `user_id`, `review`, `viewed`) VALUES
-(105, 77, 20, 'This is just check my new keyboard typing and it is making me slow', 1);
+(105, 77, 20, 'This is just check my new keyboard typing and it is making me slow', 1),
+(107, 80, 20, 'Hai', 1),
+(109, 82, 47, 'Hello TempUser', 1);
 
 -- --------------------------------------------------------
 
@@ -644,10 +992,34 @@ INSERT INTO `users` (`id`, `name`, `email`, `password`) VALUES
 (39, 'Mango', 'mango@gmail.com', '$2y$10$uWJINpd0KFyzwiB7uyoUiemYcxRtfepXXN2Mwt1EzsmyDRnUXZC2q'),
 (40, 'Pillo D J', 'kamal.19pmc335@mcka.in', '$2y$10$8mrtxt153bbc.1UjWKgfGe8C26tKSuiytlorADdw7zu0Af5ux5YtK'),
 (41, 'P P', 'pillodj1234@gmail.com', '$2y$10$bntmR4kvw20wC/wOAQnpeucgxbgNHen670SI76oBCO0CTwngIRPdq'),
-(42, 'Kamal E J', 'kamalej1234@gmail.com', '$2y$10$qCRZGdZxpN4zmbHZYX9GteVuYks1iX6syFUI7n3.hLFIqefAlsWyi'),
+(42, 'Kamal E J', 'kamalej1234@gmail.com', '$2y$10$AeOuvp0m7Zr2xUJZGxDdBud4ad.gEsudFyJRnOk0IaHkj8aSORr5K'),
 (43, 'Archana Raju', 'archana@gmail.com', '$2y$10$lEZytNnUmyK5h.ksCHpf2ejOlpR4fcQLw/puJDJmHOxFmjM5kprPK'),
 (44, '23', 'jp@gmail.com', '$2y$10$MclM0s3rWAJaoB3xbe9ZWOgo5QdA/Y5b5i4vXGhLYsZyT3XiDnYGa'),
-(45, 'Aby Thomas', 'aby2@gmail.com', '$2y$10$G9F8FcsNy/A.gT0Y.NKYYedes6/hm6J2besUCQJNS23/sVrKuj2r.');
+(45, 'Aby Thomas', 'aby2@gmail.com', '$2y$10$G9F8FcsNy/A.gT0Y.NKYYedes6/hm6J2besUCQJNS23/sVrKuj2r.'),
+(46, 'Guest', 'guest@gmail.com', '$2y$10$.M.odG87D1TFSDAJ7f4p7OGSF7uqOrqavaXBlDfMPgVb2jFEpLDBa'),
+(47, 'TempUser', 'user@gmail.com', '$2y$10$clfAVXMpYsocyxhfQqHiOemfm8YzC68knMqm32A.q/yv5GTb7Z3RK');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `wheel`
+--
+
+CREATE TABLE `wheel` (
+  `id` int(11) NOT NULL,
+  `player_id` int(11) NOT NULL,
+  `game_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `wheel`
+--
+
+INSERT INTO `wheel` (`id`, `player_id`, `game_id`) VALUES
+(1, 4, 132),
+(2, 5, 132),
+(3, 3, 132),
+(4, 2, 132);
 
 -- --------------------------------------------------------
 
@@ -668,16 +1040,16 @@ CREATE TABLE `winner_board` (
 --
 
 INSERT INTO `winner_board` (`id`, `player_id`, `imposter_win`, `crew_win`, `total_games_played`) VALUES
-(8, 6, 9, 79, 88),
-(9, 8, 18, 78, 96),
-(10, 3, 6, 67, 73),
-(11, 10, 9, 79, 88),
-(12, 4, 8, 70, 78),
-(13, 5, 6, 67, 73),
-(14, 7, 4, 24, 28),
-(15, 2, 10, 76, 86),
-(16, 11, 1, 0, 1),
-(17, 9, 2, 21, 23),
+(8, 6, 16, 79, 95),
+(9, 8, 24, 81, 105),
+(10, 3, 35, 75, 110),
+(11, 10, 13, 79, 92),
+(12, 4, 25, 77, 102),
+(13, 5, 18, 73, 91),
+(14, 7, 7, 26, 33),
+(15, 2, 36, 78, 114),
+(16, 11, 1, 1, 2),
+(17, 9, 8, 23, 31),
 (18, 12, 0, 1, 1),
 (19, 13, 1, 13, 14);
 
@@ -790,6 +1162,14 @@ ALTER TABLE `users`
   ADD UNIQUE KEY `users_email_unique` (`email`);
 
 --
+-- Indexes for table `wheel`
+--
+ALTER TABLE `wheel`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `player_id` (`player_id`),
+  ADD KEY `game_id` (`game_id`);
+
+--
 -- Indexes for table `winner_board`
 --
 ALTER TABLE `winner_board`
@@ -804,7 +1184,7 @@ ALTER TABLE `winner_board`
 -- AUTO_INCREMENT for table `addedgame`
 --
 ALTER TABLE `addedgame`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=652;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=884;
 
 --
 -- AUTO_INCREMENT for table `available_color`
@@ -822,67 +1202,73 @@ ALTER TABLE `available_players`
 -- AUTO_INCREMENT for table `broadcast`
 --
 ALTER TABLE `broadcast`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `broadcast_seen_users`
 --
 ALTER TABLE `broadcast_seen_users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=110;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=112;
 
 --
 -- AUTO_INCREMENT for table `forgotpassword`
 --
 ALTER TABLE `forgotpassword`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `groups`
 --
 ALTER TABLE `groups`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
 
 --
 -- AUTO_INCREMENT for table `joinedgroup`
 --
 ALTER TABLE `joinedgroup`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=361;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=387;
 
 --
 -- AUTO_INCREMENT for table `mvp`
 --
 ALTER TABLE `mvp`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
 
 --
 -- AUTO_INCREMENT for table `myfriends`
 --
 ALTER TABLE `myfriends`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
 
 --
 -- AUTO_INCREMENT for table `newgame`
 --
 ALTER TABLE `newgame`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=133;
 
 --
 -- AUTO_INCREMENT for table `notifications`
 --
 ALTER TABLE `notifications`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=455;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=463;
 
 --
 -- AUTO_INCREMENT for table `reviews`
 --
 ALTER TABLE `reviews`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=107;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=110;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+
+--
+-- AUTO_INCREMENT for table `wheel`
+--
+ALTER TABLE `wheel`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `winner_board`
@@ -953,6 +1339,13 @@ ALTER TABLE `notifications`
 ALTER TABLE `reviews`
   ADD CONSTRAINT `reviews_ibfk_1` FOREIGN KEY (`group_id`) REFERENCES `groups` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `reviews_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `wheel`
+--
+ALTER TABLE `wheel`
+  ADD CONSTRAINT `wheel_ibfk_1` FOREIGN KEY (`player_id`) REFERENCES `available_players` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `wheel_ibfk_2` FOREIGN KEY (`game_id`) REFERENCES `newgame` (`id`);
 
 --
 -- Constraints for table `winner_board`
