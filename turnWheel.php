@@ -14,6 +14,7 @@
     <title>Wheel It</title>
     <link rel="stylesheet" href="css/wheel.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="shortcut icon" href="fav.ico" type="image/x-icon" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
@@ -26,7 +27,7 @@
         $results = mysqli_query($conn,$sql);
         while($row = mysqli_fetch_assoc($results)) {
             echo '  <input type="radio" class="playerInputField selectedUser" data-score="'.$row['scores'].'" data-uid="'.$row['id'].'" value="'.$row['player_name'].'" name="selectedPlayer" id="player'.$row['id'].'">
-                    <label for="player'.$row['id'].'" class="playerLabel"><i class="fas fa-user-astronaut pdspace"></i> '.$row['player_name'].'</label>';
+                    <label for="player'.$row['id'].'" class="playerLabel"><i class="fas fa-user-astronaut pdspace"></i> '.$row['player_name'].'<span class="playerScore">'.$row['scores'].'</span></label>';
         }
     ?>
 
@@ -35,8 +36,8 @@
     </div>
     <div class="allPlayersMainBox">
         
-        <input type="radio" class="playerInputField userSelectedMode" name="selectedMode" id="kattoor" value="kattoor">
-        <label for="kattoor" class="playerLabel"><i class="fas fa-dot-circle pdspace"></i> kattoor</label>
+        <input type="radio" class="playerInputField userSelectedMode" name="selectedMode" id="paambu" value="paambu">
+        <label for="paambu" class="playerLabel"><i class="fas fa-dot-circle pdspace"></i> paambu</label>
 
         <input type="radio" class="playerInputField userSelectedMode" name="selectedMode" id="winModel" value="winModel">
         <label for="winModel" class="playerLabel"><i class="fas fa-dot-circle pdspace"></i> Win Model</label>
@@ -53,23 +54,23 @@
         <input type="radio" class="playerInputField userSelectedMode" name="selectedMode" id="mendos" value="mendos">
         <label for="mendos" class="playerLabel"><i class="fas fa-dot-circle pdspace"></i> Mendos</label>
 
-        <input type="radio" class="playerInputField userSelectedMode" name="selectedMode" id="9kumar" value="9kumar">
-        <label for="9kumar" class="playerLabel"><i class="fas fa-dot-circle pdspace"></i> 9kumar</label>
+        <input type="radio" class="playerInputField userSelectedMode" name="selectedMode" id="kadukkan" value="kadukkan">
+        <label for="kadukkan" class="playerLabel"><i class="fas fa-dot-circle pdspace"></i> kadukkan</label>
 
         <input type="radio" class="playerInputField userSelectedMode" name="selectedMode" id="makkan" value="makkan">
         <label for="makkan" class="playerLabel"><i class="fas fa-dot-circle pdspace"></i> Makkan</label>
 
-        <input type="radio" class="playerInputField userSelectedMode" name="selectedMode" id="robo" value="robo">
-        <label for="robo" class="playerLabel"><i class="fas fa-dot-circle pdspace"></i> robo</label>
+        <input type="radio" class="playerInputField userSelectedMode" name="selectedMode" id="shibuannan" value="shibuannan">
+        <label for="shibuannan" class="playerLabel"><i class="fas fa-dot-circle pdspace"></i> shibu annan</label>
 
-        <input type="radio" class="playerInputField userSelectedMode" name="selectedMode" id="renizvazha" value="renizvazha">
-        <label for="renizvazha" class="playerLabel"><i class="fas fa-dot-circle pdspace"></i> Mendos</label>
+        <input type="radio" class="playerInputField userSelectedMode" name="selectedMode" id="mottasijo" value="mottasijo">
+        <label for="mottasijo" class="playerLabel"><i class="fas fa-dot-circle pdspace"></i> motta sijo</label>
 
-        <input type="radio" class="playerInputField userSelectedMode" name="selectedMode" id="abinvanna" value="abinvanna">
-        <label for="abinvanna" class="playerLabel"><i class="fas fa-dot-circle pdspace"></i> abin vannam</label>
+        <input type="radio" class="playerInputField userSelectedMode" name="selectedMode" id="paalkuppi" value="paalkuppi">
+        <label for="paalkuppi" class="playerLabel"><i class="fas fa-dot-circle pdspace"></i> paal kuppi</label>
 
-        <input type="radio" class="playerInputField userSelectedMode" name="selectedMode" id="thambi" value="thambi">
-        <label for="thambi" class="playerLabel"><i class="fas fa-dot-circle pdspace"></i> thambi</label>
+        <input type="radio" class="playerInputField userSelectedMode" name="selectedMode" id="kundanbrijesh" value="kundanbrijesh">
+        <label for="kundanbrijesh" class="playerLabel"><i class="fas fa-dot-circle pdspace"></i> kundan brijesh</label>
 
     </div>
 

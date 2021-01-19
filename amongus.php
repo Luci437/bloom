@@ -25,6 +25,7 @@
     <div class="game-main-container" id="addedPlayer">
         <img src="images/snow1.png" class="snows snow1">
         <img src="images/snow3.png" class="snows snow3">
+        <a href="turnWheel.php" class="try-button2"> TURN WHEEL</a>
         <div class="side-button-box">
             <div onclick="showScore()" class="side-show-button"></div>
         </div>

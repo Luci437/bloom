@@ -252,3 +252,8 @@ body {
         opacity: 0;
     }
 }
+.playerScore {
+    position: absolute;
+    
+    color: #fff;
+}

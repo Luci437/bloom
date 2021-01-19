@@ -17,7 +17,7 @@ function spin(){
     $('.start').css("display","none");
 
     switch(userChoice) {
-        case 'kattoor':
+        case 'paambu':
             if(randomAngle > 330 && randomAngle <= 359) {
                 lucky = true;
             }
@@ -46,7 +46,7 @@ function spin(){
                 lucky = true;
             }
             break;
-        case '9kumar':
+        case 'kadukkan':
             if(randomAngle > 150 && randomAngle < 180) {
                 lucky = true;
             }
@@ -56,22 +56,22 @@ function spin(){
                 lucky = true;
             }
             break;
-        case 'robo':
+        case 'shibuannan':
             if(randomAngle > 90 && randomAngle < 120) {
                 lucky = true;
             }
             break;
-        case 'renizvazha':
+        case 'mottasijo':
             if(randomAngle > 60 && randomAngle < 90) {
                 lucky = true;
             }
             break;
-        case 'abinvanna':
+        case 'paalkuppi':
             if(randomAngle > 30 && randomAngle < 60) {
                 lucky = true;
             }
             break;
-        case 'thambi':
+        case 'kundanbrijesh':
             if(randomAngle > 0 && randomAngle < 30) {
                 lucky = true;
             }

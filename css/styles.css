@@ -2347,6 +2347,39 @@ body::-webkit-scrollbar {
     mix-blend-mode: hue;
     border-radius: 8px;
 }
+.try-button2 {
+    position: absolute;
+    bottom: 8px;
+    left: 160px;
+    font-weight: bold;
+    background: linear-gradient(45deg,#444444,#1f1f1f);
+    background-image: url("../images/mnt.jpg");
+    background-size: cover;
+    padding: 16px 34px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(254, 255, 206);
+    z-index: 25;
+    border-radius: 8px;
+}
+.try-button2:after {
+    position: absolute;
+    content: '';
+    top: 3px;
+    left: 2px;
+    width: 5px;
+    height: 89%;
+    border-radius: 20px;
+    background: #DFE1E1;
+    z-index: 26;
+    transition: 0.3s ease;
+}
+.try-button2:hover:after {
+    width: 97%;
+    mix-blend-mode: hue;
+    border-radius: 8px;
+}
 .snows {
     position: absolute;
 }
