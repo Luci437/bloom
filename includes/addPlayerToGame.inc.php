@@ -112,6 +112,7 @@
                 echo '
                 <a href="includes/endgame.inc.php" class="endgame-button"><img src="images/snow4.png" class="snows snow4">END GAME</a>
                 <a href="lucky.php" class="try-button">FIND MVP</a>
+                <a href="turnWheel.php" class="try-button2"> TURN WHEEL</a>
                 <div class="reveal-scores" onclick="showScore()"></div>
                 <div class="pb1">
                 <div class="pb11">

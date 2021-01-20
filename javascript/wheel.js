@@ -6,9 +6,48 @@ let selectedUserId = 0;
 let newScore = 0;
 let sign = '';
 $('.startWheel').attr('disabled','disabled').css("opacity","0.5");
+let mainArray = [];
+const modeValues = [[331,359],[301,329],[271,299],[241,269],[211,239],[181,209],[151,179],[121,149],[91,119],[61,89],[31,59],[1,29]];
+
+function createMainArray() {
+    while(mainArray.length < 12) {
+        mainArray.push(Math.floor(Math.random() * 12));
+    }
+}
+
+function calculatePercentage() {
+    let perSpan = document.getElementsByClassName('percentageSpan');
+    let count = 0;
+    let percentage = 0;
+    for(var i=0;i<12;i++) {
+        count = 0;
+        percentage = 0;
+        for(var j=0;j<12;j++) {
+            if(i == mainArray[j]) {
+                count++;
+            }
+        }
+        percentage = (count / 12) * 100;
+        if(percentage == 0) {
+            perSpan[i].innerHTML = percentage + '%';
+        }else {
+            perSpan[i].innerHTML = percentage.toFixed(2) + '%';
+        }
+        
+    }
+}
+
+$(document).ready(function(){
+    createMainArray();
+    calculatePercentage();
+});
 
 function spin(){ 
-    let randomAngle = Math.floor(Math.random()*  360);
+    let randomIndex = Math.floor(Math.random()*  12);
+    let randomArrayValue = mainArray[randomIndex];
+    let startingValue = modeValues[randomArrayValue][0];
+    let endingValue = modeValues[randomArrayValue][1];
+    let randomAngle = Math.floor(Math.random() * (endingValue - startingValue)) + startingValue;
     let lucky = false;
 
     selectedUserId=parseInt($('.selectedUser:checked').attr('data-uid'));
@@ -41,7 +80,7 @@ function spin(){
                 lucky = true;
             }
             break;
-        case 'mendos':
+        case 'scanner':
             if(randomAngle > 180 && randomAngle < 210) {
                 lucky = true;
             }
@@ -83,10 +122,16 @@ function spin(){
             newScore = betVal * 2;
             sign = '+';
             $('.winnerName').html(selectedUser +' '+ 'win');
+            $('#selectedModeByUser').html("<i class='far fa-check-circle pdspace'></i>"+userChoice);
+            $('#selectedModeByUser').css("color","lime");
+            $('.modeUserSelected').css({"background":"rgba(0, 255, 0, 0.205)","border":"1px solid rgba(0, 255, 0, 0.466)"});
         }else {
             newScore = betVal * 2;
             sign = '-';
             $('.winnerName').html(selectedUser +' '+ 'lost');
+            $('#selectedModeByUser').html("<i class='far fa-times-circle pdspace'></i>"+userChoice);
+            $('#selectedModeByUser').css("color"," rgb(238, 44, 44)");
+            $('.modeUserSelected').css({"background":"rgba(255, 0, 0, 0.205)","border":"1px solid rgba(255, 0, 0, 0.466)"});
         }
         $('.newValue').html(sign+' '+newScore);
         $('.newScore').html(selectedUserScore);
@@ -120,11 +165,11 @@ $('.userSelectedMode').on('change',function() {
 });
 
 function showWheel() {
+    $('#selectedModeByUser').html("<i class='far fa-question-circle pdspace'></i>"+userChoice);
     $('.wheelMainBox').css("display","flex");
 }
 
 function checkAllDataCollected() {
-
     if(selectedUser != null && userChoice != null && betVal > 0) {
         $('.startWheel').removeAttr('disabled').css("opacity","1");
     }else {

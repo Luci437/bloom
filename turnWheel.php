@@ -37,40 +37,40 @@
     <div class="allPlayersMainBox">
         
         <input type="radio" class="playerInputField userSelectedMode" name="selectedMode" id="paambu" value="paambu">
-        <label for="paambu" class="playerLabel"><i class="fas fa-dot-circle pdspace"></i> paambu</label>
+        <label for="paambu" class="playerLabel"><i class="fas fa-dot-circle pdspace"></i> paambu <span class="percentageSpan"></span></label>
 
         <input type="radio" class="playerInputField userSelectedMode" name="selectedMode" id="winModel" value="winModel">
-        <label for="winModel" class="playerLabel"><i class="fas fa-dot-circle pdspace"></i> Win Model</label>
+        <label for="winModel" class="playerLabel"><i class="fas fa-dot-circle pdspace"></i> Win Model <span class="percentageSpan"></span></label>
 
         <input type="radio" class="playerInputField userSelectedMode" name="selectedMode" id="critical" value="critical">
-        <label for="critical" class="playerLabel"><i class="fas fa-dot-circle pdspace"></i> Critical</label>
+        <label for="critical" class="playerLabel"><i class="fas fa-dot-circle pdspace"></i> Critical <span class="percentageSpan"></span></label>
 
         <input type="radio" class="playerInputField userSelectedMode" name="selectedMode" id="vayaren" value="vayaren">
-        <label for="vayaren" class="playerLabel"><i class="fas fa-dot-circle pdspace"></i> Vayaren</label>
+        <label for="vayaren" class="playerLabel"><i class="fas fa-dot-circle pdspace"></i> Vayaren <span class="percentageSpan"></span></label>
 
         <input type="radio" class="playerInputField userSelectedMode" name="selectedMode" id="thomthom" value="thomthom">
-        <label for="thomthom" class="playerLabel"><i class="fas fa-dot-circle pdspace"></i> Thom Thom</label>
+        <label for="thomthom" class="playerLabel"><i class="fas fa-dot-circle pdspace"></i> Thom Thom <span class="percentageSpan"></span></label>
 
-        <input type="radio" class="playerInputField userSelectedMode" name="selectedMode" id="mendos" value="mendos">
-        <label for="mendos" class="playerLabel"><i class="fas fa-dot-circle pdspace"></i> Mendos</label>
+        <input type="radio" class="playerInputField userSelectedMode" name="selectedMode" id="scanner" value="scanner">
+        <label for="scanner" class="playerLabel"><i class="fas fa-dot-circle pdspace"></i> scanner <span class="percentageSpan"></span></label>
 
         <input type="radio" class="playerInputField userSelectedMode" name="selectedMode" id="kadukkan" value="kadukkan">
-        <label for="kadukkan" class="playerLabel"><i class="fas fa-dot-circle pdspace"></i> kadukkan</label>
+        <label for="kadukkan" class="playerLabel"><i class="fas fa-dot-circle pdspace"></i> kadukkan <span class="percentageSpan"></span></label>
 
         <input type="radio" class="playerInputField userSelectedMode" name="selectedMode" id="makkan" value="makkan">
-        <label for="makkan" class="playerLabel"><i class="fas fa-dot-circle pdspace"></i> Makkan</label>
+        <label for="makkan" class="playerLabel"><i class="fas fa-dot-circle pdspace"></i> Makkan <span class="percentageSpan"></span></label>
 
         <input type="radio" class="playerInputField userSelectedMode" name="selectedMode" id="shibuannan" value="shibuannan">
-        <label for="shibuannan" class="playerLabel"><i class="fas fa-dot-circle pdspace"></i> shibu annan</label>
+        <label for="shibuannan" class="playerLabel"><i class="fas fa-dot-circle pdspace"></i> shibu annan <span class="percentageSpan"></span></label>
 
         <input type="radio" class="playerInputField userSelectedMode" name="selectedMode" id="mottasijo" value="mottasijo">
-        <label for="mottasijo" class="playerLabel"><i class="fas fa-dot-circle pdspace"></i> motta sijo</label>
+        <label for="mottasijo" class="playerLabel"><i class="fas fa-dot-circle pdspace"></i> motta sijo <span class="percentageSpan"></span></label>
 
         <input type="radio" class="playerInputField userSelectedMode" name="selectedMode" id="paalkuppi" value="paalkuppi">
-        <label for="paalkuppi" class="playerLabel"><i class="fas fa-dot-circle pdspace"></i> paal kuppi</label>
+        <label for="paalkuppi" class="playerLabel"><i class="fas fa-dot-circle pdspace"></i> paal kuppi <span class="percentageSpan"></span></label>
 
         <input type="radio" class="playerInputField userSelectedMode" name="selectedMode" id="kundanbrijesh" value="kundanbrijesh">
-        <label for="kundanbrijesh" class="playerLabel"><i class="fas fa-dot-circle pdspace"></i> kundan brijesh</label>
+        <label for="kundanbrijesh" class="playerLabel"><i class="fas fa-dot-circle pdspace"></i> kundan brijesh <span class="percentageSpan"></span></label>
 
     </div>
 
@@ -86,6 +86,9 @@
         </div>
         <button class="start" onclick="spin()">START</button>
         <button class="result" onclick="showResult()">RESULT</button>
+        <div class="modeUserSelected">
+            <h5 id="selectedModeByUser"></h5>
+        </div>
     </div>
 
     <div class="resultBox">
