@@ -66,8 +66,8 @@ function getCard() {
 }
 
 function findTask() {
-    let taskHeading = ['Exchange','Boost 10','Loss 10','MVP'];
-    let taskDescription = ['You exchange your point with ','You get 10 more points','Your 10 points is deducted','OUR VAZHA PLAYER'];
+    let taskHeading = ['Exchange','Boost 10','Loss 10','MVP','DEVILS HUT'];
+    let taskDescription = ['You exchange your point with ','You get 10 more points','Your 10 points is deducted','OUR VAZHA PLAYER','Any one of the Top 2 player will be dead.'];
     let playerName = document.getElementsByClassName('available-playerName');
     let totalPlayer = playerName.length;
     let totalTask = taskHeading.length;
@@ -169,6 +169,13 @@ function findTask() {
 
         $('.header-title').html(taskHeading[randomTask]);
         $('.header-text').html(taskDescription[randomTask]);
+    }else if(selectedTask == 'DEVILS HUT') {
+        $('.header-title').html(taskHeading[randomTask]);
+        $('.header-text').html(taskDescription[randomTask]);
+        setTimeout(() => {
+            console.log("Entered here");
+            window.location = "wildwest.php?luckyPlayer="+luckyPlayerId;
+        }, 4000);
     }
 
 
